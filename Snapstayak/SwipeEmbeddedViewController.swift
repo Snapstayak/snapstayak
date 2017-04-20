@@ -17,24 +17,7 @@ enum SwipeEmbeddedViewControllerType {
 }
 
 class SwipeEmbeddedViewController: UIViewController {
-    private var swipeType: SwipeEmbeddedViewControllerType! {
-        didSet {
-            var backgroundColor: UIColor
-            switch self.swipeType! {
-            case .center:
-                backgroundColor = UIColor.white
-            case .bottom:
-                backgroundColor = UIColor.blue
-            case .left:
-                backgroundColor = UIColor.red
-            case .right:
-                backgroundColor = UIColor.brown
-            case .top:
-                backgroundColor = UIColor.cyan
-            }
-            self.view.backgroundColor = backgroundColor
-        }
-    }
+    private var swipeType: SwipeEmbeddedViewControllerType!
     
     init(withType swipeType: SwipeEmbeddedViewControllerType) {
         super.init(nibName: nil, bundle: nil)
