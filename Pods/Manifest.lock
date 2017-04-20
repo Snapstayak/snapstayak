@@ -1,0 +1,12 @@
+PODS:
+  - SwipeNavigationController (2.0.2)
+
+DEPENDENCIES:
+  - SwipeNavigationController
+
+SPEC CHECKSUMS:
+  SwipeNavigationController: 592681599a3105a44484e5b7af9055cee7a0d7b9
+
+PODFILE CHECKSUM: 71a51ddcb0733e19696bff7f2c5573453916b474
+
+COCOAPODS: 1.2.0

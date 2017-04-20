@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import SwipeNavigationController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let centerViewController = SwipeEmbeddedViewController(withType: .center)
+        let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController)
+        let topViewController = SwipeEmbeddedViewController(withType: .top)
+        swipeNavigationController.topViewController = topViewController
+        let rightViewController = SwipeEmbeddedViewController(withType: .right)
+        swipeNavigationController.rightViewController = rightViewController
+        let leftViewController = SwipeEmbeddedViewController(withType: .left)
+        swipeNavigationController.leftViewController = leftViewController
+        let bottomViewController = SwipeEmbeddedViewController(withType: .bottom)
+        swipeNavigationController.bottomViewController = bottomViewController
+        
+        self.window?.rootViewController = swipeNavigationController
         return true
     }
 

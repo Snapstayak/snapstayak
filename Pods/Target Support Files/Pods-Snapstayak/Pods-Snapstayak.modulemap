@@ -1,0 +1,6 @@
+framework module Pods_Snapstayak {
+  umbrella header "Pods-Snapstayak-umbrella.h"
+
+  export *
+  module * { export * }
+}
