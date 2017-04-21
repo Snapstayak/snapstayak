@@ -7,19 +7,12 @@
 //
 
 import UIKit
-
-enum SwipeEmbeddedViewControllerType {
-    case center
-    case bottom
-    case left
-    case right
-    case top
-}
+import enum SwipeNavigationController.Position
 
 class SwipeEmbeddedViewController: UIViewController {
-    private var swipeType: SwipeEmbeddedViewControllerType!
+    private var swipeType: Position!
     
-    init(withType swipeType: SwipeEmbeddedViewControllerType) {
+    init(withType swipeType: Position) {
         super.init(nibName: nil, bundle: nil)
         self.swipeType = swipeType
         var backgroundColor: UIColor
