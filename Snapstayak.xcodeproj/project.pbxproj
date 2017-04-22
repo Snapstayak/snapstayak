@@ -13,6 +13,7 @@
 		D51EA31D1EA843880046AB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31B1EA843880046AB48 /* Main.storyboard */; };
 		D51EA31F1EA843880046AB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31E1EA843880046AB48 /* Assets.xcassets */; };
 		D51EA3221EA843880046AB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */; };
+		D55291B41EAB319C00D709D4 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55291B31EAB319C00D709D4 /* CameraCaptureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D51EA31E1EA843880046AB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D51EA3211EA843880046AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D51EA3231EA843880046AB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55291B31EAB319C00D709D4 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		EDDA29A076758D06193CCE35 /* Pods_Snapstayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapstayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			children = (
 				D51EA3171EA843880046AB48 /* AppDelegate.swift */,
 				D51EA3191EA843880046AB48 /* SwipeEmbeddedViewController.swift */,
+				D55291B31EAB319C00D709D4 /* CameraCaptureViewController.swift */,
 				D51EA31B1EA843880046AB48 /* Main.storyboard */,
 				D51EA31E1EA843880046AB48 /* Assets.xcassets */,
 				D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D55291B41EAB319C00D709D4 /* CameraCaptureViewController.swift in Sources */,
 				D51EA31A1EA843880046AB48 /* SwipeEmbeddedViewController.swift in Sources */,
 				D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */,
 			);
