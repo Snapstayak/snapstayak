@@ -45,13 +45,13 @@ class CameraCaptureViewController: SwipeEmbeddedViewController {
         var input: AVCaptureDeviceInput?
         do {
             input = try AVCaptureDeviceInput(device: rearCamera)
+            // This might fail on the simulator ^
         } catch {
             fatalError()
         }
         if (captureSession?.canAddInput(input))! {
             captureSession?.addInput(input!)
             self.stillImageOutput = AVCapturePhotoOutput()
-            // TODO: might need to fix this ^
             if (captureSession?.canAddOutput(self.stillImageOutput))! {
                 captureSession?.addOutput(self.stillImageOutput)
                 self.capturePreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -62,16 +62,4 @@ class CameraCaptureViewController: SwipeEmbeddedViewController {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
