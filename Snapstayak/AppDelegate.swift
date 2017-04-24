@@ -11,13 +11,16 @@ import SwipeNavigationController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    private let CameraCaptureViewXibIdentifier = "CameraCaptureView"
 
     var window: UIWindow?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let centerViewController = CameraCaptureViewController(nibName: "CameraCaptureView", bundle: nil)
+        
+        let centerViewController = CameraCaptureViewController(nibName: CameraCaptureViewXibIdentifier, bundle: nil)
         let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController)
         self.window?.rootViewController = swipeNavigationController
         return true

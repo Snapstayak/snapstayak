@@ -13,6 +13,7 @@
 		D51EA31D1EA843880046AB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31B1EA843880046AB48 /* Main.storyboard */; };
 		D51EA31F1EA843880046AB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31E1EA843880046AB48 /* Assets.xcassets */; };
 		D51EA3221EA843880046AB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */; };
+		D52D35911EAD9420003F2A1C /* CameraSessionCapturedPhotoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D35901EAD9420003F2A1C /* CameraSessionCapturedPhotoImageView.swift */; };
 		D53A2BD11EAD33A900E14163 /* CameraCaptureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53A2BCF1EAD33A900E14163 /* CameraCaptureView.xib */; };
 		D53A2BD31EAD618200E14163 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53A2BD21EAD618200E14163 /* CameraCaptureViewController.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,7 @@
 		D51EA31E1EA843880046AB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D51EA3211EA843880046AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D51EA3231EA843880046AB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D52D35901EAD9420003F2A1C /* CameraSessionCapturedPhotoImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraSessionCapturedPhotoImageView.swift; sourceTree = "<group>"; };
 		D53A2BCF1EAD33A900E14163 /* CameraCaptureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCaptureView.xib; sourceTree = "<group>"; };
 		D53A2BD21EAD618200E14163 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		EDDA29A076758D06193CCE35 /* Pods_Snapstayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapstayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,12 +86,13 @@
 			path = Snapstayak;
 			sourceTree = "<group>";
 		};
-		D53A2BD41EAD69FA00E14163 /* Camera Capture View */ = {
+		D52D358F1EAD93E4003F2A1C /* CameraCaptureView */ = {
 			isa = PBXGroup;
 			children = (
 				D53A2BCF1EAD33A900E14163 /* CameraCaptureView.xib */,
+				D52D35901EAD9420003F2A1C /* CameraSessionCapturedPhotoImageView.swift */,
 			);
-			name = "Camera Capture View";
+			name = CameraCaptureView;
 			sourceTree = "<group>";
 		};
 		D594995E1EAD2C480063EAF8 /* View Controllers */ = {
@@ -111,7 +114,7 @@
 		D59499601EAD2C5F0063EAF8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D53A2BD41EAD69FA00E14163 /* Camera Capture View */,
+				D52D358F1EAD93E4003F2A1C /* CameraCaptureView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D53A2BD31EAD618200E14163 /* CameraCaptureViewController.swift in Sources */,
+				D52D35911EAD9420003F2A1C /* CameraSessionCapturedPhotoImageView.swift in Sources */,
 				D51EA31A1EA843880046AB48 /* SwipeEmbeddedViewController.swift in Sources */,
 				D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */,
 			);
