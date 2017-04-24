@@ -13,7 +13,8 @@
 		D51EA31D1EA843880046AB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31B1EA843880046AB48 /* Main.storyboard */; };
 		D51EA31F1EA843880046AB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31E1EA843880046AB48 /* Assets.xcassets */; };
 		D51EA3221EA843880046AB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */; };
-		D55291B41EAB319C00D709D4 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55291B31EAB319C00D709D4 /* CameraCaptureViewController.swift */; };
+		D53A2BD11EAD33A900E14163 /* CameraCaptureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53A2BCF1EAD33A900E14163 /* CameraCaptureView.xib */; };
+		D53A2BD31EAD618200E14163 /* CameraCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53A2BD21EAD618200E14163 /* CameraCaptureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,8 @@
 		D51EA31E1EA843880046AB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D51EA3211EA843880046AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D51EA3231EA843880046AB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D55291B31EAB319C00D709D4 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
+		D53A2BCF1EAD33A900E14163 /* CameraCaptureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCaptureView.xib; sourceTree = "<group>"; };
+		D53A2BD21EAD618200E14163 /* CameraCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCaptureViewController.swift; sourceTree = "<group>"; };
 		EDDA29A076758D06193CCE35 /* Pods_Snapstayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapstayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,14 +74,55 @@
 			isa = PBXGroup;
 			children = (
 				D51EA3171EA843880046AB48 /* AppDelegate.swift */,
-				D51EA3191EA843880046AB48 /* SwipeEmbeddedViewController.swift */,
-				D55291B31EAB319C00D709D4 /* CameraCaptureViewController.swift */,
+				D59499611EAD2C620063EAF8 /* UI */,
+				D594995F1EAD2C5B0063EAF8 /* Models */,
 				D51EA31B1EA843880046AB48 /* Main.storyboard */,
 				D51EA31E1EA843880046AB48 /* Assets.xcassets */,
 				D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */,
 				D51EA3231EA843880046AB48 /* Info.plist */,
 			);
 			path = Snapstayak;
+			sourceTree = "<group>";
+		};
+		D53A2BD41EAD69FA00E14163 /* Camera Capture View */ = {
+			isa = PBXGroup;
+			children = (
+				D53A2BCF1EAD33A900E14163 /* CameraCaptureView.xib */,
+			);
+			name = "Camera Capture View";
+			sourceTree = "<group>";
+		};
+		D594995E1EAD2C480063EAF8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D53A2BD21EAD618200E14163 /* CameraCaptureViewController.swift */,
+				D51EA3191EA843880046AB48 /* SwipeEmbeddedViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D594995F1EAD2C5B0063EAF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D59499601EAD2C5F0063EAF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D53A2BD41EAD69FA00E14163 /* Camera Capture View */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D59499611EAD2C620063EAF8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D59499601EAD2C5F0063EAF8 /* Views */,
+				D594995E1EAD2C480063EAF8 /* View Controllers */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		E20ACF247691B6558E1AF6F6 /* Pods */ = {
@@ -154,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53A2BD11EAD33A900E14163 /* CameraCaptureView.xib in Resources */,
 				D51EA3221EA843880046AB48 /* LaunchScreen.storyboard in Resources */,
 				D51EA31F1EA843880046AB48 /* Assets.xcassets in Resources */,
 				D51EA31D1EA843880046AB48 /* Main.storyboard in Resources */,
@@ -215,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D55291B41EAB319C00D709D4 /* CameraCaptureViewController.swift in Sources */,
+				D53A2BD31EAD618200E14163 /* CameraCaptureViewController.swift in Sources */,
 				D51EA31A1EA843880046AB48 /* SwipeEmbeddedViewController.swift in Sources */,
 				D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */,
 			);

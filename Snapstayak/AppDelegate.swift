@@ -17,17 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let centerViewController = CameraCaptureViewController(withType: .center)
+        let centerViewController = CameraCaptureViewController(nibName: "CameraCaptureView", bundle: nil)
         let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController)
-        let topViewController = SwipeEmbeddedViewController(withType: .top)
-        swipeNavigationController.topViewController = topViewController
-        let rightViewController = SwipeEmbeddedViewController(withType: .right)
-        swipeNavigationController.rightViewController = rightViewController
-        let leftViewController = SwipeEmbeddedViewController(withType: .left)
-        swipeNavigationController.leftViewController = leftViewController
-        let bottomViewController = SwipeEmbeddedViewController(withType: .bottom)
-        swipeNavigationController.bottomViewController = bottomViewController
-        
         self.window?.rootViewController = swipeNavigationController
         return true
     }
@@ -53,7 +44,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-
