@@ -18,13 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let cameraViewController = CameraViewController()
-        let postsViewController = PostsViewController()
-        postsViewController.view.backgroundColor = UIColor.yellow
-        let swipeNavigationController = SwipeNavigationController(centerViewController: postsViewController)
+        let centerStoryboard = UIStoryboard(name: "Center", bundle: nil)
+        let centerViewController = centerStoryboard.instantiateInitialViewController()
+        let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController!)
         self.mainSwipeNavigationController = swipeNavigationController
-        swipeNavigationController.rightViewController = cameraViewController
-        swipeNavigationController.showEmbeddedView(position: .right)
+        
+        swipeNavigationController.leftViewController = DetailsViewController()
+        
+        let topStoryboard = UIStoryboard(name: "Top", bundle: nil)
+        swipeNavigationController.topViewController = topStoryboard.instantiateInitialViewController()
+        
+        swipeNavigationController.rightViewController = CameraViewController()
+        // swipeNavigationController.showEmbeddedView(position: .right) // this makes the right (camera) container open first by default (desired feature, commenting out temporarily to work on the Center container)
+        
         self.window?.rootViewController = swipeNavigationController
         
         return true
