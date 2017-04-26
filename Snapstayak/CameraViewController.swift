@@ -16,36 +16,19 @@ enum CameraViewControllerState {
 }
 
 class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController {
-    
-    fileprivate var currentState: CameraViewControllerState! {
-        willSet(newState) {
-            switch newState! {
-            case .showingCapturedPhoto:
-                print("Captured photo!")
-            case .showingCapturedVideo:
-                print("Captured video!")
-            case .readyForMediaCapture:
-                print("Ready!")
-            }
-        }
-    }
-    
-    fileprivate var takenPhotoImageView: UIImageView!
+    fileprivate var flipCameraButton: UIButton!
+    fileprivate var flashButton: UIButton!
     fileprivate var cameraButton: RecordButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.currentState = .readyForMediaCapture
         let buttonWidthHeight: CGFloat = 90
         self.cameraButton = RecordButton(frame: CGRect(x: self.view.frame.width / 2 - (buttonWidthHeight/2), y: self.view.frame.maxY - (buttonWidthHeight) - 16, width: buttonWidthHeight, height: buttonWidthHeight))
         self.view.addSubview(self.cameraButton)
         self.cameraButton.delegate = self
         self.cameraDelegate = self
-        self.takenPhotoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        self.takenPhotoImageView.isHidden = true
-        self.view.addSubview(self.takenPhotoImageView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,9 +43,39 @@ class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController
 
 extension CameraViewController: SwiftyCamViewControllerDelegate {
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
-        self.cameraButton.isEnabled = false
-        self.currentState = .showingCapturedPhoto
-        self.takenPhotoImageView.image = photo
-        self.takenPhotoImageView.isHidden = false
+        let imagePreviewViewController = CapturedImagePreviewViewController()
+        imagePreviewViewController.image = photo
+        imagePreviewViewController.delegate = self
+        self.present(imagePreviewViewController, animated: true, completion: nil)
+    }
+    
+    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
+        self.cameraButton.growButton()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.flashButton.alpha = 0.0
+            self.flipCameraButton.alpha = 0.0
+        })
+    }
+    
+    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
+        self.cameraButton.shrinkButton()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.flashButton.alpha = 1.0
+            self.flipCameraButton.alpha = 1.0
+        })
+    }
+    
+    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
+        //
+    }
+}
+
+extension CameraViewController: CapturedMediaPreviewViewControllerDelegate {
+    func capturedMediaPreviewViewControllerDidDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController) {
+        //
+    }
+    
+    func capturedMediaPreviewViewControllerWillDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController) {
+        print("Will dismiss!")
     }
 }
