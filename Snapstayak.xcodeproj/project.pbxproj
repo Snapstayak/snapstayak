@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30296F362EB3FF4C04A3B16 /* Pods_Snapstayak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1910FD0D9337AC4AD04E46 /* Pods_Snapstayak.framework */; };
+		D51A02371EB061BE00183336 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A02361EB061BE00183336 /* PostsViewController.swift */; };
 		D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EA3171EA843880046AB48 /* AppDelegate.swift */; };
-		D51EA31A1EA843880046AB48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EA3191EA843880046AB48 /* ViewController.swift */; };
 		D51EA31D1EA843880046AB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31B1EA843880046AB48 /* Main.storyboard */; };
 		D51EA31F1EA843880046AB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31E1EA843880046AB48 /* Assets.xcassets */; };
 		D51EA3221EA843880046AB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */; };
+		D553B9F41EAEFC1000D480FF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553B9F31EAEFC1000D480FF /* CameraViewController.swift */; };
+		D553B9F61EAF050900D480FF /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553B9F51EAF050900D480FF /* RecordButton.swift */; };
+		D5A992FE1EB02C5B00494505 /* SwipeEmbeddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A992FD1EB02C5B00494505 /* SwipeEmbeddedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10EA2CB24D5AA9A4A75A96E0 /* Pods-Snapstayak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapstayak.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snapstayak/Pods-Snapstayak.release.xcconfig"; sourceTree = "<group>"; };
+		57DF554411E56E3F82A3A3EA /* Pods-Snapstayak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapstayak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snapstayak/Pods-Snapstayak.debug.xcconfig"; sourceTree = "<group>"; };
+		5D1910FD0D9337AC4AD04E46 /* Pods_Snapstayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapstayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D51A02361EB061BE00183336 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		D51EA3141EA843880046AB48 /* Snapstayak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapstayak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51EA3171EA843880046AB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D51EA3191EA843880046AB48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D51EA31C1EA843880046AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D51EA31E1EA843880046AB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D51EA3211EA843880046AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D51EA3231EA843880046AB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D553B9F31EAEFC1000D480FF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		D553B9F51EAF050900D480FF /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		D5A992FD1EB02C5B00494505 /* SwipeEmbeddedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeEmbeddedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30296F362EB3FF4C04A3B16 /* Pods_Snapstayak.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BADD6207363EBD317421C08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57DF554411E56E3F82A3A3EA /* Pods-Snapstayak.debug.xcconfig */,
+				10EA2CB24D5AA9A4A75A96E0 /* Pods-Snapstayak.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A9FCCA06D99EACF629495EAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D1910FD0D9337AC4AD04E46 /* Pods_Snapstayak.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D51A02351EB0618500183336 /* Swipe View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5A992FD1EB02C5B00494505 /* SwipeEmbeddedViewController.swift */,
+				D553B9F31EAEFC1000D480FF /* CameraViewController.swift */,
+				D51A02361EB061BE00183336 /* PostsViewController.swift */,
+			);
+			name = "Swipe View Controllers";
+			sourceTree = "<group>";
+		};
 		D51EA30B1EA843870046AB48 = {
 			isa = PBXGroup;
 			children = (
 				D51EA3161EA843880046AB48 /* Snapstayak */,
 				D51EA3151EA843880046AB48 /* Products */,
+				0BADD6207363EBD317421C08 /* Pods */,
+				A9FCCA06D99EACF629495EAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +95,38 @@
 			isa = PBXGroup;
 			children = (
 				D51EA3171EA843880046AB48 /* AppDelegate.swift */,
-				D51EA3191EA843880046AB48 /* ViewController.swift */,
-				D51EA31B1EA843880046AB48 /* Main.storyboard */,
+				D5ACC1E11EAF29970074E221 /* UI */,
 				D51EA31E1EA843880046AB48 /* Assets.xcassets */,
-				D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */,
 				D51EA3231EA843880046AB48 /* Info.plist */,
 			);
 			path = Snapstayak;
+			sourceTree = "<group>";
+		};
+		D5ACC1E11EAF29970074E221 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D51EA31B1EA843880046AB48 /* Main.storyboard */,
+				D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */,
+				D5ACC1E41EAF29AA0074E221 /* View Controllers */,
+				D5ACC1E21EAF299C0074E221 /* Views */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		D5ACC1E21EAF299C0074E221 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D553B9F51EAF050900D480FF /* RecordButton.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D5ACC1E41EAF29AA0074E221 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D51A02351EB0618500183336 /* Swipe View Controllers */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D51EA3261EA843880046AB48 /* Build configuration list for PBXNativeTarget "Snapstayak" */;
 			buildPhases = (
+				4B839A2E032D89F341A92D20 /* [CP] Check Pods Manifest.lock */,
 				D51EA3101EA843880046AB48 /* Sources */,
 				D51EA3111EA843880046AB48 /* Frameworks */,
 				D51EA3121EA843880046AB48 /* Resources */,
+				05CEB5F8E5837B13886A6001 /* [CP] Embed Pods Frameworks */,
+				392FA8F56B23D6C33691C599 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,13 +200,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05CEB5F8E5837B13886A6001 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snapstayak/Pods-Snapstayak-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		392FA8F56B23D6C33691C599 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snapstayak/Pods-Snapstayak-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B839A2E032D89F341A92D20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D51EA3101EA843880046AB48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D51EA31A1EA843880046AB48 /* ViewController.swift in Sources */,
 				D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */,
+				D5A992FE1EB02C5B00494505 /* SwipeEmbeddedViewController.swift in Sources */,
+				D553B9F61EAF050900D480FF /* RecordButton.swift in Sources */,
+				D553B9F41EAEFC1000D480FF /* CameraViewController.swift in Sources */,
+				D51A02371EB061BE00183336 /* PostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +378,7 @@
 		};
 		D51EA3271EA843880046AB48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57DF554411E56E3F82A3A3EA /* Pods-Snapstayak.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QT27T2PJ3;
@@ -272,6 +392,7 @@
 		};
 		D51EA3281EA843880046AB48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10EA2CB24D5AA9A4A75A96E0 /* Pods-Snapstayak.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QT27T2PJ3;
@@ -302,6 +423,7 @@
 				D51EA3281EA843880046AB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

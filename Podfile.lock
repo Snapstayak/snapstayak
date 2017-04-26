@@ -1,0 +1,15 @@
+PODS:
+  - SwiftyCam (2.2.1)
+  - SwipeNavigationController (2.0.2)
+
+DEPENDENCIES:
+  - SwiftyCam
+  - SwipeNavigationController
+
+SPEC CHECKSUMS:
+  SwiftyCam: 966b67eeab2dfcfd0077eaa3c5a6bd69e1748af0
+  SwipeNavigationController: 592681599a3105a44484e5b7af9055cee7a0d7b9
+
+PODFILE CHECKSUM: 9775e12a623f519e9548850c568f46529a2dde01
+
+COCOAPODS: 1.2.0

@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import SwipeNavigationController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var mainSwipeNavigationController: SwipeNavigationController?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let cameraViewController = CameraViewController()
+        let postsViewController = PostsViewController()
+        postsViewController.view.backgroundColor = UIColor.yellow
+        let swipeNavigationController = SwipeNavigationController(centerViewController: postsViewController)
+        self.mainSwipeNavigationController = swipeNavigationController
+        swipeNavigationController.rightViewController = cameraViewController
+        swipeNavigationController.showEmbeddedView(position: .right)
+        self.window?.rootViewController = swipeNavigationController
+        
         return true
     }
 
