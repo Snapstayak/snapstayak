@@ -14,6 +14,15 @@ class CapturedImagePreviewViewController: UIViewController, CapturedMediaPreview
     var mediaContainerView: UIView!
     var cancelButton: UIButton!
     var image: UIImage?
+    
+    init(image: UIImage?) {
+        self.image = image
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

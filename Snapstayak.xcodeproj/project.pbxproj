@@ -18,6 +18,7 @@
 		D5A992FE1EB02C5B00494505 /* SwipeEmbeddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A992FD1EB02C5B00494505 /* SwipeEmbeddedViewController.swift */; };
 		D5E9B4101EB087FE002F02CF /* CapturedMediaPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B40F1EB087FE002F02CF /* CapturedMediaPreviewViewController.swift */; };
 		D5E9B4121EB08AD4002F02CF /* CapturedImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E9B4111EB08AD4002F02CF /* CapturedImagePreviewViewController.swift */; };
+		D5FB487B1EB1CB5B00BDF6F8 /* CapturedVideoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FB487A1EB1CB5B00BDF6F8 /* CapturedVideoPreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D5A992FD1EB02C5B00494505 /* SwipeEmbeddedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeEmbeddedViewController.swift; sourceTree = "<group>"; };
 		D5E9B40F1EB087FE002F02CF /* CapturedMediaPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedMediaPreviewViewController.swift; sourceTree = "<group>"; };
 		D5E9B4111EB08AD4002F02CF /* CapturedImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedImagePreviewViewController.swift; sourceTree = "<group>"; };
+		D5FB487A1EB1CB5B00BDF6F8 /* CapturedVideoPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedVideoPreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				D51A02361EB061BE00183336 /* PostsViewController.swift */,
 				D5E9B40F1EB087FE002F02CF /* CapturedMediaPreviewViewController.swift */,
 				D5E9B4111EB08AD4002F02CF /* CapturedImagePreviewViewController.swift */,
+				D5FB487A1EB1CB5B00BDF6F8 /* CapturedVideoPreviewViewController.swift */,
 			);
 			name = "Swipe View Controllers";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				D5E9B4101EB087FE002F02CF /* CapturedMediaPreviewViewController.swift in Sources */,
 				D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */,
 				D5E9B4121EB08AD4002F02CF /* CapturedImagePreviewViewController.swift in Sources */,
+				D5FB487B1EB1CB5B00BDF6F8 /* CapturedVideoPreviewViewController.swift in Sources */,
 				D5A992FE1EB02C5B00494505 /* SwipeEmbeddedViewController.swift in Sources */,
 				D553B9F61EAF050900D480FF /* RecordButton.swift in Sources */,
 				D553B9F41EAEFC1000D480FF /* CameraViewController.swift in Sources */,
