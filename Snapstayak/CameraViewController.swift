@@ -16,8 +16,9 @@ enum CameraViewControllerState {
 }
 
 class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController {
+    
     fileprivate var flipCameraButton: UIButton!
-    fileprivate var flashButton: UIButton!
+    fileprivate var cameraFlashButton: UIButton!
     fileprivate var cameraButton: RecordButton!
     
     let buttonWidthHeight: CGFloat = 90
@@ -46,18 +47,28 @@ class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController
         self.view.addSubview(self.cameraButton)
         self.cameraButton.delegate = self
         
-        // Reverse camera button.
-        let reverseCameraHeight = self.buttonWidthHeight / 2.0
-        let reverseCameraButton = UIButton(frame: CGRect(x: self.cameraButton.frame.maxX + reverseCameraHeight, y: self.cameraButton.frame.origin.y + reverseCameraHeight / 2.0, width: reverseCameraHeight, height: reverseCameraHeight))
-        reverseCameraButton.addTarget(self, action: #selector(reverseCamera), for: .touchUpInside)
-        reverseCameraButton.setImage(#imageLiteral(resourceName: "flipCamera"), for: .normal)
-        self.view.addSubview(reverseCameraButton)
+        // Flip camera button.
+        let flipCameraButtonHeight = self.buttonWidthHeight / 2.0
+        self.flipCameraButton = UIButton(frame: CGRect(x: self.cameraButton.frame.maxX + flipCameraButtonHeight, y: self.cameraButton.frame.origin.y + flipCameraButtonHeight / 2.0, width: flipCameraButtonHeight, height: flipCameraButtonHeight))
+        self.flipCameraButton.addTarget(self, action: #selector(reverseCamera), for: .touchUpInside)
+        self.flipCameraButton.setImage(#imageLiteral(resourceName: "flipCamera"), for: .normal)
+        self.view.addSubview(flipCameraButton)
         
-        
+        // Camera flash button.
+        let cameraFlashButtonHeight = flipCameraButtonHeight
+        self.cameraFlashButton = UIButton(frame: CGRect(x: self.cameraButton.frame.minX - 2*cameraFlashButtonHeight, y: self.cameraButton.frame.origin.y + cameraFlashButtonHeight / 2.0, width: cameraFlashButtonHeight, height: cameraFlashButtonHeight))
+        self.cameraFlashButton.addTarget(self, action: #selector(cameraFlashButtonTapped), for: .touchUpInside)
+        self.cameraFlashButton.setImage((self.flashEnabled ? #imageLiteral(resourceName: "flash") : #imageLiteral(resourceName: "flashOutline")), for: .normal)
+        self.view.addSubview(cameraFlashButton)
     }
     
     @objc private func reverseCamera() {
         self.switchCamera()
+    }
+    
+    @objc private func cameraFlashButtonTapped() {
+        self.flashEnabled = !self.flashEnabled
+        self.cameraFlashButton.setImage((self.flashEnabled ? #imageLiteral(resourceName: "flash") : #imageLiteral(resourceName: "flashOutline")), for: .normal)
     }
 }
 
@@ -78,7 +89,7 @@ extension CameraViewController: SwiftyCamViewControllerDelegate {
         self.cameraButton.growButton()
         UIView.animate(withDuration: 0.25, animations: {
 //            self.flashButton.alpha = 0.0
-//            self.flipCameraButton.alpha = 0.0
+            self.flipCameraButton.alpha = 0.0
         })
     }
     
@@ -86,7 +97,7 @@ extension CameraViewController: SwiftyCamViewControllerDelegate {
         self.cameraButton.shrinkButton()
         UIView.animate(withDuration: 0.25, animations: {
 //            self.flashButton.alpha = 1.0
-//            self.flipCameraButton.alpha = 1.0
+            self.flipCameraButton.alpha = 1.0
         })
     }
 }
