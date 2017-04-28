@@ -17,10 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        let postsViewController = UIViewController()
         let cameraViewController = CameraViewController()
-        let postsViewController = PostsViewController()
-        postsViewController.view.backgroundColor = UIColor.yellow
         let swipeNavigationController = SwipeNavigationController(centerViewController: postsViewController)
         self.mainSwipeNavigationController = swipeNavigationController
         swipeNavigationController.rightViewController = cameraViewController

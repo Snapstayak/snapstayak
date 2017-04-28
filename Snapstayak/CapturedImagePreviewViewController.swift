@@ -8,11 +8,7 @@
 
 import UIKit
 
-class CapturedImagePreviewViewController: UIViewController, CapturedMediaPreviewViewController {
-    
-    weak var delegate: CapturedMediaPreviewViewControllerDelegate?
-    var mediaContainerView: UIView!
-    var cancelButton: UIButton!
+class CapturedImagePreviewViewController: CapturedMediaPreviewViewController {
     var image: UIImage?
     
     init(image: UIImage?) {
@@ -44,13 +40,6 @@ class CapturedImagePreviewViewController: UIViewController, CapturedMediaPreview
     
     
     // MARK: - Helper actions.
-    
-    func setUpCancelButton() {
-        self.cancelButton = UIButton(frame: CGRect(x: 16.0, y: 16.0, width: 24.0, height: 24.0))
-        self.cancelButton.setImage(#imageLiteral(resourceName: "cancel"), for: .normal)
-        self.cancelButton.addTarget(self, action: #selector(onDismissButtonTapped), for: .touchUpInside)
-        self.view.addSubview(cancelButton)
-    }
     
     func onDismissButtonTapped() {
         print("Button tapped!")

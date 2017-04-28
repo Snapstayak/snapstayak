@@ -10,19 +10,12 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class CapturedVideoPreviewViewController: UIViewController, CapturedMediaPreviewViewController {
-    
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
+class CapturedVideoPreviewViewController: CapturedMediaPreviewViewController {
     
     private var videoURL: URL?
     var player: AVPlayer?
     var playerController : AVPlayerViewController?
-    var cancelButton: UIButton!
-    var mediaContainerView: UIView!
-    weak var delegate: CapturedMediaPreviewViewControllerDelegate?
-
+    
     init(videoURL: URL) {
         self.videoURL = videoURL
         super.init(nibName: nil, bundle: nil)
@@ -55,7 +48,6 @@ class CapturedVideoPreviewViewController: UIViewController, CapturedMediaPreview
         playerController!.view.frame = view.frame
         NotificationCenter.default.addObserver(self, selector: #selector(self.playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player!.currentItem)
         self.setUpCancelButton()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,17 +57,6 @@ class CapturedVideoPreviewViewController: UIViewController, CapturedMediaPreview
     
     
     // MARK: - Helper actions.
-    
-    func setUpCancelButton() {
-        self.cancelButton = UIButton(frame: CGRect(x: 16.0, y: 16.0, width: 24.0, height: 24.0))
-        self.cancelButton.setImage(#imageLiteral(resourceName: "cancel"), for: .normal)
-        self.cancelButton.addTarget(self, action: #selector(onDismissButtonTapped), for: .touchUpInside)
-        self.view.addSubview(cancelButton)
-    }
-    
-    func cancel() {
-        dismiss(animated: true, completion: nil)
-    }
     
     func onDismissButtonTapped() {
         print("Button tapped!")

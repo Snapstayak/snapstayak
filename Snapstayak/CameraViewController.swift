@@ -14,7 +14,6 @@ class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController
     fileprivate var flipCameraButton: UIButton!
     fileprivate var cameraFlashButton: UIButton!
     fileprivate var cameraButton: RecordButton!
-    var transition: BaseTransition!
     
     let buttonWidthHeight: CGFloat = 90
     
