@@ -14,6 +14,7 @@ class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController
     fileprivate var flipCameraButton: UIButton!
     fileprivate var cameraFlashButton: UIButton!
     fileprivate var cameraButton: RecordButton!
+    var transition: BaseTransition!
     
     let buttonWidthHeight: CGFloat = 90
     
@@ -80,13 +81,13 @@ extension CameraViewController: SwiftyCamViewControllerDelegate {
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
         let imagePreviewViewController = CapturedImagePreviewViewController(image: photo)
         imagePreviewViewController.delegate = self
-        self.present(imagePreviewViewController, animated: true, completion: nil)
+        self.present(imagePreviewViewController, animated: false, completion: nil)
     }
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
         let videoPreviewViewController = CapturedVideoPreviewViewController(videoURL: url)
         videoPreviewViewController.delegate = self
-        self.present(videoPreviewViewController, animated: true, completion: nil)
+        self.present(videoPreviewViewController, animated: false, completion: nil)
     }
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
