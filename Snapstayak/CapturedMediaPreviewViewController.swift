@@ -10,7 +10,6 @@ import UIKit
 
 protocol CapturedMediaPreviewViewControllerDelegate: class {
     func capturedMediaPreviewViewControllerWillDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController)
-    func capturedMediaPreviewViewControllerDidDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController)
 }
 
 protocol CapturedMediaPreviewViewController: NSObjectProtocol {

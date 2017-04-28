@@ -9,12 +9,6 @@
 import UIKit
 import SwiftyCam
 
-enum CameraViewControllerState {
-    case readyForMediaCapture
-    case showingCapturedPhoto
-    case showingCapturedVideo
-}
-
 class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController {
     
     fileprivate var flipCameraButton: UIButton!
@@ -32,8 +26,18 @@ class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController
         self.maximumVideoDuration = 10.0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,7 +92,7 @@ extension CameraViewController: SwiftyCamViewControllerDelegate {
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didBeginRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         self.cameraButton.growButton()
         UIView.animate(withDuration: 0.25, animations: {
-//            self.flashButton.alpha = 0.0
+            self.cameraFlashButton.alpha = 0.0
             self.flipCameraButton.alpha = 0.0
         })
     }
@@ -96,17 +100,32 @@ extension CameraViewController: SwiftyCamViewControllerDelegate {
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishRecordingVideo camera: SwiftyCamViewController.CameraSelection) {
         self.cameraButton.shrinkButton()
         UIView.animate(withDuration: 0.25, animations: {
-//            self.flashButton.alpha = 1.0
+            self.cameraFlashButton.alpha = 1.0
             self.flipCameraButton.alpha = 1.0
+        })
+    }
+    
+    func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFocusAtPoint point: CGPoint) {
+        let focusView = UIImageView(image: #imageLiteral(resourceName: "focus"))
+        focusView.center = point
+        focusView.alpha = 0.0
+        view.addSubview(focusView)
+        
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseInOut, animations: {
+            focusView.alpha = 1.0
+            focusView.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        }, completion: { (success) in
+            UIView.animate(withDuration: 0.15, delay: 0.5, options: .curveEaseInOut, animations: {
+                focusView.alpha = 0.0
+                focusView.transform = CGAffineTransform(translationX: 0.6, y: 0.6)
+            }, completion: { (success) in
+                focusView.removeFromSuperview()
+            })
         })
     }
 }
 
 extension CameraViewController: CapturedMediaPreviewViewControllerDelegate {
-    func capturedMediaPreviewViewControllerDidDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController) {
-        //
-    }
-    
     func capturedMediaPreviewViewControllerWillDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController) {
         print("Will dismiss!")
     }
