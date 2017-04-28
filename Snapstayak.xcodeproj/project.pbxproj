@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6547713C1EB325F900FAB25D /* CapturedImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654771391EB325F900FAB25D /* CapturedImagePreviewViewController.swift */; };
+		6547713D1EB325F900FAB25D /* CapturedMediaPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6547713A1EB325F900FAB25D /* CapturedMediaPreviewViewController.swift */; };
+		6547713E1EB325F900FAB25D /* CapturedVideoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6547713B1EB325F900FAB25D /* CapturedVideoPreviewViewController.swift */; };
 		654E003F1EB073B900F2C6EF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E003E1EB073B900F2C6EF /* SettingsTableViewController.swift */; };
 		6575CD9A1EB06F8000FF8A9F /* Center.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6575CD991EB06F8000FF8A9F /* Center.storyboard */; };
 		6575CD9D1EB070B400FF8A9F /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6575CD9C1EB070B400FF8A9F /* Top.storyboard */; };
@@ -31,6 +34,9 @@
 		10EA2CB24D5AA9A4A75A96E0 /* Pods-Snapstayak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapstayak.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snapstayak/Pods-Snapstayak.release.xcconfig"; sourceTree = "<group>"; };
 		57DF554411E56E3F82A3A3EA /* Pods-Snapstayak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapstayak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snapstayak/Pods-Snapstayak.debug.xcconfig"; sourceTree = "<group>"; };
 		5D1910FD0D9337AC4AD04E46 /* Pods_Snapstayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapstayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		654771391EB325F900FAB25D /* CapturedImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedImagePreviewViewController.swift; sourceTree = "<group>"; };
+		6547713A1EB325F900FAB25D /* CapturedMediaPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedMediaPreviewViewController.swift; sourceTree = "<group>"; };
+		6547713B1EB325F900FAB25D /* CapturedVideoPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedVideoPreviewViewController.swift; sourceTree = "<group>"; };
 		654E003E1EB073B900F2C6EF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6575CD991EB06F8000FF8A9F /* Center.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Center.storyboard; sourceTree = "<group>"; };
 		6575CD9C1EB070B400FF8A9F /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
@@ -108,6 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				654E003E1EB073B900F2C6EF /* SettingsTableViewController.swift */,
+				654771391EB325F900FAB25D /* CapturedImagePreviewViewController.swift */,
+				6547713A1EB325F900FAB25D /* CapturedMediaPreviewViewController.swift */,
+				6547713B1EB325F900FAB25D /* CapturedVideoPreviewViewController.swift */,
 				D5A992FD1EB02C5B00494505 /* SwipeEmbeddedViewController.swift */,
 				D553B9F31EAEFC1000D480FF /* CameraViewController.swift */,
 				D51A02361EB061BE00183336 /* DetailsViewController.swift */,
@@ -301,8 +310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D7C0741EB07C8500104DED /* LoginViewController.swift in Sources */,
+				6547713E1EB325F900FAB25D /* CapturedVideoPreviewViewController.swift in Sources */,
 				D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */,
 				D5A992FE1EB02C5B00494505 /* SwipeEmbeddedViewController.swift in Sources */,
+				6547713D1EB325F900FAB25D /* CapturedMediaPreviewViewController.swift in Sources */,
 				654E003F1EB073B900F2C6EF /* SettingsTableViewController.swift in Sources */,
 				D553B9F61EAF050900D480FF /* RecordButton.swift in Sources */,
 				65E94A9E1EB3145D0057BBC9 /* Keychain.swift in Sources */,
@@ -311,6 +322,7 @@
 				D553B9F41EAEFC1000D480FF /* CameraViewController.swift in Sources */,
 				65E94A9C1EB310660057BBC9 /* Snapstayak.swift in Sources */,
 				D51A02371EB061BE00183336 /* DetailsViewController.swift in Sources */,
+				6547713C1EB325F900FAB25D /* CapturedImagePreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
