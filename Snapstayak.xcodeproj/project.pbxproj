@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		654E003F1EB073B900F2C6EF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E003E1EB073B900F2C6EF /* SettingsTableViewController.swift */; };
+		6575CD9A1EB06F8000FF8A9F /* Center.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6575CD991EB06F8000FF8A9F /* Center.storyboard */; };
+		6575CD9D1EB070B400FF8A9F /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6575CD9C1EB070B400FF8A9F /* Top.storyboard */; };
+		65D7C0721EB077C600104DED /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D7C0711EB077C600104DED /* Login.storyboard */; };
+		65D7C0741EB07C8500104DED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7C0731EB07C8500104DED /* LoginViewController.swift */; };
+		65D7C0761EB07ECC00104DED /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7C0751EB07ECC00104DED /* CenterViewController.swift */; };
+		65E94A9A1EB30FD30057BBC9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E94A991EB30FD30057BBC9 /* User.swift */; };
+		65E94A9C1EB310660057BBC9 /* Snapstayak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E94A9B1EB310660057BBC9 /* Snapstayak.swift */; };
+		65E94A9E1EB3145D0057BBC9 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E94A9D1EB3145D0057BBC9 /* Keychain.swift */; };
 		D30296F362EB3FF4C04A3B16 /* Pods_Snapstayak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1910FD0D9337AC4AD04E46 /* Pods_Snapstayak.framework */; };
-		D51A02371EB061BE00183336 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A02361EB061BE00183336 /* PostsViewController.swift */; };
+		D51A02371EB061BE00183336 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A02361EB061BE00183336 /* DetailsViewController.swift */; };
 		D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51EA3171EA843880046AB48 /* AppDelegate.swift */; };
 		D51EA31D1EA843880046AB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31B1EA843880046AB48 /* Main.storyboard */; };
 		D51EA31F1EA843880046AB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D51EA31E1EA843880046AB48 /* Assets.xcassets */; };
@@ -22,7 +31,16 @@
 		10EA2CB24D5AA9A4A75A96E0 /* Pods-Snapstayak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapstayak.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snapstayak/Pods-Snapstayak.release.xcconfig"; sourceTree = "<group>"; };
 		57DF554411E56E3F82A3A3EA /* Pods-Snapstayak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapstayak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snapstayak/Pods-Snapstayak.debug.xcconfig"; sourceTree = "<group>"; };
 		5D1910FD0D9337AC4AD04E46 /* Pods_Snapstayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapstayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D51A02361EB061BE00183336 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		654E003E1EB073B900F2C6EF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		6575CD991EB06F8000FF8A9F /* Center.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Center.storyboard; sourceTree = "<group>"; };
+		6575CD9C1EB070B400FF8A9F /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
+		65D7C0711EB077C600104DED /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		65D7C0731EB07C8500104DED /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		65D7C0751EB07ECC00104DED /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		65E94A991EB30FD30057BBC9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65E94A9B1EB310660057BBC9 /* Snapstayak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapstayak.swift; sourceTree = "<group>"; };
+		65E94A9D1EB3145D0057BBC9 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		D51A02361EB061BE00183336 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D51EA3141EA843880046AB48 /* Snapstayak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapstayak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51EA3171EA843880046AB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D51EA31C1EA843880046AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +73,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6575CD9B1EB06FC500FF8A9F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6575CD9C1EB070B400FF8A9F /* Top.storyboard */,
+				6575CD991EB06F8000FF8A9F /* Center.storyboard */,
+				D51EA31B1EA843880046AB48 /* Main.storyboard */,
+				D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */,
+				65D7C0711EB077C600104DED /* Login.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		65E94A981EB30FBA0057BBC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65E94A9D1EB3145D0057BBC9 /* Keychain.swift */,
+				65E94A9B1EB310660057BBC9 /* Snapstayak.swift */,
+				65E94A991EB30FD30057BBC9 /* User.swift */,
+			);
+			name = Models;
+			path = Snapstayak;
+			sourceTree = "<group>";
+		};
 		A9FCCA06D99EACF629495EAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,9 +107,11 @@
 		D51A02351EB0618500183336 /* Swipe View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				654E003E1EB073B900F2C6EF /* SettingsTableViewController.swift */,
 				D5A992FD1EB02C5B00494505 /* SwipeEmbeddedViewController.swift */,
 				D553B9F31EAEFC1000D480FF /* CameraViewController.swift */,
-				D51A02361EB061BE00183336 /* PostsViewController.swift */,
+				D51A02361EB061BE00183336 /* DetailsViewController.swift */,
+				65D7C0751EB07ECC00104DED /* CenterViewController.swift */,
 			);
 			name = "Swipe View Controllers";
 			sourceTree = "<group>";
@@ -77,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D51EA3161EA843880046AB48 /* Snapstayak */,
+				65E94A981EB30FBA0057BBC9 /* Models */,
 				D51EA3151EA843880046AB48 /* Products */,
 				0BADD6207363EBD317421C08 /* Pods */,
 				A9FCCA06D99EACF629495EAC /* Frameworks */,
@@ -105,8 +149,7 @@
 		D5ACC1E11EAF29970074E221 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D51EA31B1EA843880046AB48 /* Main.storyboard */,
-				D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */,
+				6575CD9B1EB06FC500FF8A9F /* Storyboards */,
 				D5ACC1E41EAF29AA0074E221 /* View Controllers */,
 				D5ACC1E21EAF299C0074E221 /* Views */,
 			);
@@ -124,6 +167,7 @@
 		D5ACC1E41EAF29AA0074E221 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				65D7C0731EB07C8500104DED /* LoginViewController.swift */,
 				D51A02351EB0618500183336 /* Swipe View Controllers */,
 			);
 			name = "View Controllers";
@@ -164,7 +208,7 @@
 				TargetAttributes = {
 					D51EA3131EA843880046AB48 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 3QT27T2PJ3;
+						DevelopmentTeam = UBH739J24U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -192,9 +236,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6575CD9A1EB06F8000FF8A9F /* Center.storyboard in Resources */,
+				65D7C0721EB077C600104DED /* Login.storyboard in Resources */,
 				D51EA3221EA843880046AB48 /* LaunchScreen.storyboard in Resources */,
 				D51EA31F1EA843880046AB48 /* Assets.xcassets in Resources */,
 				D51EA31D1EA843880046AB48 /* Main.storyboard in Resources */,
+				6575CD9D1EB070B400FF8A9F /* Top.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,11 +300,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D7C0741EB07C8500104DED /* LoginViewController.swift in Sources */,
 				D51EA3181EA843880046AB48 /* AppDelegate.swift in Sources */,
 				D5A992FE1EB02C5B00494505 /* SwipeEmbeddedViewController.swift in Sources */,
+				654E003F1EB073B900F2C6EF /* SettingsTableViewController.swift in Sources */,
 				D553B9F61EAF050900D480FF /* RecordButton.swift in Sources */,
+				65E94A9E1EB3145D0057BBC9 /* Keychain.swift in Sources */,
+				65E94A9A1EB30FD30057BBC9 /* User.swift in Sources */,
+				65D7C0761EB07ECC00104DED /* CenterViewController.swift in Sources */,
 				D553B9F41EAEFC1000D480FF /* CameraViewController.swift in Sources */,
-				D51A02371EB061BE00183336 /* PostsViewController.swift in Sources */,
+				65E94A9C1EB310660057BBC9 /* Snapstayak.swift in Sources */,
+				D51A02371EB061BE00183336 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,10 +434,11 @@
 			baseConfigurationReference = 57DF554411E56E3F82A3A3EA /* Pods-Snapstayak.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3QT27T2PJ3;
+				DEVELOPMENT_TEAM = UBH739J24U;
 				INFOPLIST_FILE = Snapstayak/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.snapstayak.Snapstayak;
+				PRODUCT_BUNDLE_IDENTIFIER = com.snapstayak.Snapstayak.tejen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -395,10 +449,11 @@
 			baseConfigurationReference = 10EA2CB24D5AA9A4A75A96E0 /* Pods-Snapstayak.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3QT27T2PJ3;
+				DEVELOPMENT_TEAM = UBH739J24U;
 				INFOPLIST_FILE = Snapstayak/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.snapstayak.Snapstayak;
+				PRODUCT_BUNDLE_IDENTIFIER = com.snapstayak.Snapstayak.tejen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

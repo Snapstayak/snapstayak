@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Center View Controller-->
         <scene sceneID="qe2-7G-wyS">
             <objects>
-                <viewController id="PRu-rD-UTK" sceneMemberID="viewController">
+                <viewController id="PRu-rD-UTK" customClass="CenterViewController" customModule="Snapstayak" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vLd-6f-acO"/>
                         <viewControllerLayoutGuide type="bottom" id="hYs-hV-E9s"/>
