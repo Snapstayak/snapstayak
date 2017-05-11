@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyCam
 
-class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController {
+class CameraViewController: SwiftyCamViewController {
     
     fileprivate var flipCameraButton: UIButton!
     fileprivate var cameraFlashButton: UIButton!
@@ -23,7 +23,7 @@ class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController
         // Do any additional setup after loading the view.
         self.cameraDelegate = self
         self.addButtons()
-        self.maximumVideoDuration = 10.0
+        self.maximumVideoDuration = 5.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,13 +79,13 @@ class CameraViewController: SwiftyCamViewController, SwipeEmbeddedViewController
 extension CameraViewController: SwiftyCamViewControllerDelegate {
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
         let imagePreviewViewController = CapturedImagePreviewViewController(image: photo)
-        imagePreviewViewController.delegate = self
+        imagePreviewViewController.viewControllerDelegate = self
         self.present(imagePreviewViewController, animated: false, completion: nil)
     }
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
         let videoPreviewViewController = CapturedVideoPreviewViewController(videoURL: url)
-        videoPreviewViewController.delegate = self
+        videoPreviewViewController.viewControllerDelegate = self
         self.present(videoPreviewViewController, animated: false, completion: nil)
     }
     
