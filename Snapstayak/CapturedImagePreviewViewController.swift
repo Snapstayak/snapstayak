@@ -23,12 +23,12 @@ class CapturedImagePreviewViewController: CapturedMediaPreviewViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.mediaContainerView = UIImageView()
-        self.mediaContainerView.frame = self.view.frame
-        self.view.addSubview(mediaContainerView)
         guard let image = self.image else {
             fatalError("No image!")
         }
+        self.mediaContainerView = UIImageView()
+        self.mediaContainerView.frame = self.view.frame
+        self.view.addSubview(mediaContainerView)
         (self.mediaContainerView as? UIImageView)?.image = image
         self.setUpCancelButton()
         self.setUpSendButton()
