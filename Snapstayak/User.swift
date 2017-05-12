@@ -130,9 +130,10 @@ class User: Snapstayak {
         email = dictionary["email"] as? String
     }
     
-    private func Export() -> NSDictionary {
+    private func Export() -> NSMutableDictionary {
         return [
-            "email": email!
+            "email": email!,
+            "uuid": UUID().uuidString
         ];
     }
     

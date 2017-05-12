@@ -30,7 +30,8 @@ class SettingsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if tableView.cellForRow(at: indexPath)?.reuseIdentifier == "logoutCell" {
-            // TODO: log out
+            User.logout()
+            self.dismiss(animated: true, completion: nil)
         }
     }
 

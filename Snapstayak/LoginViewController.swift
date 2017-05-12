@@ -9,7 +9,12 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    var newUser: User!
+    var token: String!
 
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginIndicator: UIActivityIndicatorView!
     @IBOutlet weak var emailContainerView: UIView!
     @IBOutlet weak var loginButtonContainerView: UIView!
     
@@ -25,27 +30,69 @@ class LoginViewController: UIViewController {
         loginButtonContainerView.layer.borderWidth = 2;
         loginButtonContainerView.layer.borderColor = UIColor(white: 1, alpha: 0.15).cgColor;
         
+        emailField.delegate = self
         emailField.attributedPlaceholder = NSAttributedString(string: emailField.placeholder ?? "", attributes: [NSForegroundColorAttributeName: UIColor(white: 1, alpha: 0.7)]);
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.hideKeyboardWhenTappedAround()
     }
     
-    @IBAction func onLoginBtn(_ sender: Any) {
-        let newUser = User()
-        newUser.signup(email: emailField.text ?? "")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loginIndicator.stopAnimating()
+        loginButton.isHidden = false
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if token != nil {
+            User.logout()
+            performSegue(withIdentifier: "loggingIn", sender: nil)
+        } else if let _ = User.currentUser {
+            let vc = (UIApplication.shared.delegate as! AppDelegate).buildSwipeNavController()
+            self.present(vc, animated: true, completion: { 
+                UIView.animate(withDuration: 1, animations: {
+                    self.view.alpha = 1
+                }, completion: nil)
+            })
+        } else {
+            UIView.animate(withDuration: 1, animations: {
+                self.view.alpha = 1
+            }, completion: nil)
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    @IBAction func onLoginBtn(_ sender: Any?) {
+        loginIndicator.startAnimating()
+        loginButton.isHidden = true
+        
+        newUser = User()
+        newUser.signup(email: emailField.text ?? "") { user in
+            if(user?.id == nil) {
+                self.loginIndicator.stopAnimating()
+                self.loginButton.isHidden = false
+            } else {
+                self.performSegue(withIdentifier: "checkEmail", sender: nil)
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "loggingIn" {
+            let vc = segue.destination as! LoggingInViewController
+            vc.token = token
+            token = nil
+        }
     }
-    */
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        onLoginBtn(nil)
+        return true
+    }
 }

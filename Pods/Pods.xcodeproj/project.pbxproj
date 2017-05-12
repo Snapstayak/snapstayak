@@ -48,7 +48,7 @@
 		0D1BBD8F0578A80B458E569172CAB878 /* UIViewController+SwipeNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+SwipeNavigationController.swift"; path = "SwipeNavigationController/SwipeNavigationController/UIViewController+SwipeNavigationController.swift"; sourceTree = "<group>"; };
 		0DBB015C81495E536274F4E1A15C1F67 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeNavigationController.swift; path = SwipeNavigationController/SwipeNavigationController/SwipeNavigationController.swift; sourceTree = "<group>"; };
 		17AA2986CB8D75A22AD2D0164913543C /* Pods-Snapstayak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Snapstayak.debug.xcconfig"; sourceTree = "<group>"; };
-		2481587E085F35071C6F24B1C52ACA6A /* SwipeNavigationController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwipeNavigationController.modulemap; sourceTree = "<group>"; };
+		2481587E085F35071C6F24B1C52ACA6A /* SwipeNavigationController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwipeNavigationController.modulemap; sourceTree = "<group>"; };
 		2725CC53271F8AAAA07D8CB8E721FB79 /* Pods-Snapstayak-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Snapstayak-dummy.m"; sourceTree = "<group>"; };
 		36F221EDA88C6A48F7FD572E6E168E7C /* SwiftyCam-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCam-umbrella.h"; sourceTree = "<group>"; };
 		3B1991692010539BC0B89277A44F0266 /* SwipeNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwipeNavigationController.h; path = SwipeNavigationController/SwipeNavigationController/SwipeNavigationController.h; sourceTree = "<group>"; };
@@ -56,24 +56,24 @@
 		426CFE6CD3A017741D97079C018AE9B6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		427CE383BDDDF82ABC40A3AFCD2E72C2 /* SwiftyCamViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewControllerDelegate.swift; path = Source/SwiftyCamViewControllerDelegate.swift; sourceTree = "<group>"; };
 		4885F4D65520AC2DD545C8282D0CF511 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FA98E3556C72113EF89A6AC60BFDBAE /* SwipeNavigationController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwipeNavigationController.framework; path = SwipeNavigationController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA98E3556C72113EF89A6AC60BFDBAE /* SwipeNavigationController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipeNavigationController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		656D4C7113E18E3F3CF1CB19DC483118 /* Pods-Snapstayak-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Snapstayak-frameworks.sh"; sourceTree = "<group>"; };
 		70192D779925375F61B8BB9B4559BD74 /* SwipeNavigationController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeNavigationController-prefix.pch"; sourceTree = "<group>"; };
 		7750C6DE7C6AE36BD043735C7D053CDD /* SwiftyCamButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamButton.swift; path = Source/SwiftyCamButton.swift; sourceTree = "<group>"; };
 		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		907DA1217BA94CF4655C912759CB2C3F /* Pods-Snapstayak-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Snapstayak-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AAD6FE3184D1E552FE275BC6EBFE608 /* SwiftyCam-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyCam-prefix.pch"; sourceTree = "<group>"; };
-		9E30609199B571007BAA3BC8A3CAC48E /* SwiftyCam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyCam.framework; path = SwiftyCam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E30609199B571007BAA3BC8A3CAC48E /* SwiftyCam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyCam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07867930356B605827237C4572ABF4F /* Pods-Snapstayak-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Snapstayak-resources.sh"; sourceTree = "<group>"; };
 		A45B3541D1359EAD18812DF321151930 /* SwiftyCam.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyCam.xcconfig; sourceTree = "<group>"; };
 		B3CCC839ED89FAC47420715137F642AC /* PreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = Source/PreviewView.swift; sourceTree = "<group>"; };
 		B442A84B61CD3930A9F9190760A947EC /* SwiftyCamViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCamViewController.swift; path = Source/SwiftyCamViewController.swift; sourceTree = "<group>"; };
-		B63386F040F7274F1FF7DCC926A0BBDA /* Pods-Snapstayak.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Snapstayak.modulemap"; sourceTree = "<group>"; };
-		C21D40A7EAC9243E0785A0EC7DE19DB0 /* SwiftyCam.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyCam.modulemap; sourceTree = "<group>"; };
+		B63386F040F7274F1FF7DCC926A0BBDA /* Pods-Snapstayak.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Snapstayak.modulemap"; sourceTree = "<group>"; };
+		C21D40A7EAC9243E0785A0EC7DE19DB0 /* SwiftyCam.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyCam.modulemap; sourceTree = "<group>"; };
 		C49FBCA88AAC04433F6AAB256A46CD99 /* SwiftyCam-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyCam-dummy.m"; sourceTree = "<group>"; };
-		C50AB5DB8EE00CE57A63B1D64280C8AA /* Pods_Snapstayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Snapstayak.framework; path = "Pods-Snapstayak.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C50AB5DB8EE00CE57A63B1D64280C8AA /* Pods_Snapstayak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapstayak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB56AE8267A5A0B4115D33F7D6A90E42 /* Pods-Snapstayak-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Snapstayak-acknowledgements.plist"; sourceTree = "<group>"; };
 		CCC072CCA0B1FD920593E3BDE8167267 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF02701B7BE40FF267EEE055FBB2EB1A /* SwipeNavigationController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeNavigationController.xcconfig; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 				0D1BBD8F0578A80B458E569172CAB878 /* UIViewController+SwipeNavigationController.swift */,
 				8A2BDA30BCEB35C9D0706F5AC4135DD2 /* Support Files */,
 			);
-			name = SwipeNavigationController;
 			path = SwipeNavigationController;
 			sourceTree = "<group>";
 		};
@@ -139,7 +138,6 @@
 				427CE383BDDDF82ABC40A3AFCD2E72C2 /* SwiftyCamViewControllerDelegate.swift */,
 				AA5E9ACCE1A6A3B8BE9110CB626FDFDF /* Support Files */,
 			);
-			name = SwiftyCam;
 			path = SwiftyCam;
 			sourceTree = "<group>";
 		};
@@ -429,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -609,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;

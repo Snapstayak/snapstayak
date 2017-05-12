@@ -19,25 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         var initialViewController: UIViewController
-        if /*let _ = User.currentUser*/ User.currentUser == nil {
-            // There is a logged-in user, so go to the main screen.
-            let centerStoryboard = UIStoryboard(name: "Center", bundle: nil)
-            let centerViewController = centerStoryboard.instantiateInitialViewController()
-            let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController!)
-            self.mainSwipeNavigationController = swipeNavigationController
-            
-            swipeNavigationController.leftViewController = DetailsViewController()
-            
-            let topStoryboard = UIStoryboard(name: "Top", bundle: nil)
-            swipeNavigationController.topViewController = topStoryboard.instantiateInitialViewController()
-            
-            swipeNavigationController.rightViewController = CameraViewController()
-            // swipeNavigationController.showEmbeddedView(position: .right) // this makes the right (camera) container open first by default (desired feature, commenting out temporarily to work on the Center container)
-            initialViewController = swipeNavigationController
-        } else {
-            let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
-            initialViewController = (loginStoryboard.instantiateInitialViewController())!
-        }
+        let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        initialViewController = (loginStoryboard.instantiateInitialViewController())!
         
         self.window?.rootViewController = initialViewController
         
@@ -65,25 +48,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        
-        print("url \(url)")
-        print("url host :\(url.host as String!)")
-        print("url path :\(url.path as String!)")
-        alert(title: "WIP", message: "Login Successful", button: "Alrighty...");
-        
-        
-        var urlPath : String = url.path as String!
-//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-//        if(urlPath == "/about"){
-//            self.window?.rootViewController = aboutVC
-//        }
-        
-        self.window?.makeKeyAndVisible()
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//        print("source application:\(sourceApplication)")
+        let value: String = url.absoluteString as String
+//        print("value :\(value)")
+//        print("scheme: \(url.scheme)")
+//        print("query: \(url.query)")
+        if(value.characters.count > 20 && value[value.startIndex...value.index(value.startIndex, offsetBy: 18)] == "snapstayak://login/") {
+            let loginToken = value[value.index(value.startIndex, offsetBy: 19)..<value.endIndex]
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let vc = storyboard.instantiateInitialViewController() as! LoginViewController
+            vc.token = loginToken
+            self.window?.rootViewController = vc
+        }
         return true
     }
+    
+    func buildSwipeNavController() -> SwipeNavigationController {
+        // There is a logged-in user, so go to the main screen.
+        let centerStoryboard = UIStoryboard(name: "Center", bundle: nil)
+        let centerViewController = centerStoryboard.instantiateInitialViewController()
+        let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController!)
+        self.mainSwipeNavigationController = swipeNavigationController
+        
+        swipeNavigationController.leftViewController = DetailsViewController()
+        
+        let topStoryboard = UIStoryboard(name: "Top", bundle: nil)
+        swipeNavigationController.topViewController = topStoryboard.instantiateInitialViewController()
+        
+        swipeNavigationController.rightViewController = CameraViewController()
+        // swipeNavigationController.showEmbeddedView(position: .right) // this makes the right (camera) container open first by default (desired feature, commenting out temporarily to work on the Center container)
+        return swipeNavigationController
+    }
+    
 }
 
 func delay(_ delay: Double, closure: (()->())?) { // Copied from my previous CodePath assignments -- Tejen
