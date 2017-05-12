@@ -13,14 +13,21 @@ protocol CapturedMediaPreviewViewControllerDelegate: class {
     func capturedMediaPreviewViewControllerWillDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController)
 }
 
+protocol CapturedMediaPreviewPostDelegate: class {
+    func newPhotoPostWithData(photo: UIImage)
+    func newVideoPostWithData(videoURL: URL)
+}
+
 class CapturedMediaPreviewViewController: UIViewController {
-    weak var delegate: CapturedMediaPreviewViewControllerDelegate?
+    weak var viewControllerDelegate: CapturedMediaPreviewViewControllerDelegate?
+    weak var postDelegate: CapturedMediaPreviewPostDelegate?
     var mediaContainerView: UIView!
     var cancelButton: UIButton!
+    var sendButton: SendButton!
     private var cancelButtonImageView: UIImageView!
     
     func dismissViewController() {
-        self.delegate?.capturedMediaPreviewViewControllerWillDismiss(self)
+        self.viewControllerDelegate?.capturedMediaPreviewViewControllerWillDismiss(self)
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -33,6 +40,20 @@ class CapturedMediaPreviewViewController: UIViewController {
         self.cancelButton = UIButton(frame: cancelButtonFrame)
         self.cancelButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
         self.view.addSubview(cancelButton)
+    }
+    
+    func setUpSendButton() {
+        let sendFrameButtonHeight: CGFloat = 90/1.5
+        let sendButtonFrame = CGRect(x: self.view.frame.maxX - sendFrameButtonHeight - 16, y: self.view.frame.maxY - sendFrameButtonHeight - 16, width: sendFrameButtonHeight, height: sendFrameButtonHeight)
+        self.sendButton = SendButton(frame: sendButtonFrame)
+        self.sendButton.addTarget(self, action: #selector(self.sendButtonTapped), for: .touchUpInside)
+        self.view.addSubview(self.sendButton)
+    }
+    
+    func sendButtonTapped() {
+        self.dismiss(animated: false) {
+            self.containerSwipeNavigationController?.showEmbeddedView(position: .center)
+        }
     }
     
     override func viewDidLoad() {

@@ -48,6 +48,7 @@ class CapturedVideoPreviewViewController: CapturedMediaPreviewViewController {
         playerController!.view.frame = view.frame
         NotificationCenter.default.addObserver(self, selector: #selector(self.playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player!.currentItem)
         self.setUpCancelButton()
+        self.setUpSendButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,5 +69,13 @@ class CapturedVideoPreviewViewController: CapturedMediaPreviewViewController {
             self.player!.seek(to: kCMTimeZero)
             self.player!.play()
         }
+    }
+    
+    override func sendButtonTapped() {
+        guard let videoURL = self.videoURL else {
+            return
+        }
+        self.postDelegate?.newVideoPostWithData(videoURL: videoURL)
+        super.sendButtonTapped()
     }
 }

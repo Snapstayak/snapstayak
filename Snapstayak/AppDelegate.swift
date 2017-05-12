@@ -18,20 +18,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let centerStoryboard = UIStoryboard(name: "Center", bundle: nil)
-        let centerViewController = centerStoryboard.instantiateInitialViewController()
-        let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController!)
-        self.mainSwipeNavigationController = swipeNavigationController
+        var initialViewController: UIViewController
+        if /*let _ = User.currentUser*/ User.currentUser == nil {
+            // There is a logged-in user, so go to the main screen.
+            let centerStoryboard = UIStoryboard(name: "Center", bundle: nil)
+            let centerViewController = centerStoryboard.instantiateInitialViewController()
+            let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController!)
+            self.mainSwipeNavigationController = swipeNavigationController
+            
+            swipeNavigationController.leftViewController = DetailsViewController()
+            
+            let topStoryboard = UIStoryboard(name: "Top", bundle: nil)
+            swipeNavigationController.topViewController = topStoryboard.instantiateInitialViewController()
+            
+            swipeNavigationController.rightViewController = CameraViewController()
+            // swipeNavigationController.showEmbeddedView(position: .right) // this makes the right (camera) container open first by default (desired feature, commenting out temporarily to work on the Center container)
+            initialViewController = swipeNavigationController
+        } else {
+            let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            initialViewController = (loginStoryboard.instantiateInitialViewController())!
+        }
         
-        swipeNavigationController.leftViewController = DetailsViewController()
-        
-        let topStoryboard = UIStoryboard(name: "Top", bundle: nil)
-        swipeNavigationController.topViewController = topStoryboard.instantiateInitialViewController()
-        
-        swipeNavigationController.rightViewController = CameraViewController()
-        // swipeNavigationController.showEmbeddedView(position: .right) // this makes the right (camera) container open first by default (desired feature, commenting out temporarily to work on the Center container)
-        
-        self.window?.rootViewController = swipeNavigationController
+        self.window?.rootViewController = initialViewController
         
         return true
     }

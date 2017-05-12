@@ -23,14 +23,15 @@ class CapturedImagePreviewViewController: CapturedMediaPreviewViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.mediaContainerView = UIImageView()
-        self.mediaContainerView.frame = self.view.frame
-        self.view.addSubview(mediaContainerView)
         guard let image = self.image else {
             fatalError("No image!")
         }
+        self.mediaContainerView = UIImageView()
+        self.mediaContainerView.frame = self.view.frame
+        self.view.addSubview(mediaContainerView)
         (self.mediaContainerView as? UIImageView)?.image = image
         self.setUpCancelButton()
+        self.setUpSendButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,5 +45,13 @@ class CapturedImagePreviewViewController: CapturedMediaPreviewViewController {
     func onDismissButtonTapped() {
         print("Button tapped!")
         self.dismissViewController()
+    }
+    
+    override func sendButtonTapped() {
+        guard let sendImage = self.image else {
+            return
+        }
+        self.postDelegate?.newPhotoPostWithData(photo: sendImage)
+        super.sendButtonTapped()
     }
 }

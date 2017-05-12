@@ -8,11 +8,10 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController, SwipeEmbeddedViewController {
+class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.green
     }
-    
 }
