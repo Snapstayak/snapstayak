@@ -137,6 +137,6 @@ extension CameraViewController: SwiftyCamViewControllerDelegate {
 extension CameraViewController: CapturedMediaPreviewDelegate {
     func capturedMediaPreviewViewController(_ capturedMediaVC: CapturedMediaPreviewViewController, userDidPressSendWithCapturedMedia capturedMedia: CapturedMedia) {
         self.postDelegate?.newPostWithCapturedMedia(capturedMedia)
-        self.containerSwipeNavigationController?.showEmbeddedView(position: .center)
+        self.containerSwipeNavigationController?.showEmbeddedView(position: .left)
     }
 }

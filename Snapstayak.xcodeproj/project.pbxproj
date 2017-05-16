@@ -14,11 +14,11 @@
 		654ED2951EC581F300EB266F /* LoggingInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654ED2941EC581F300EB266F /* LoggingInViewController.swift */; };
 		654ED2971EC58BD400EB266F /* LoginCheckEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654ED2961EC58BD400EB266F /* LoginCheckEmailViewController.swift */; };
 		654ED2991EC5900B00EB266F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654ED2981EC5900B00EB266F /* Common.swift */; };
-		6575CD9A1EB06F8000FF8A9F /* Center.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6575CD991EB06F8000FF8A9F /* Center.storyboard */; };
-		6575CD9D1EB070B400FF8A9F /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6575CD9C1EB070B400FF8A9F /* Top.storyboard */; };
+		6575CD9A1EB06F8000FF8A9F /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6575CD991EB06F8000FF8A9F /* Posts.storyboard */; };
+		6575CD9D1EB070B400FF8A9F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6575CD9C1EB070B400FF8A9F /* Settings.storyboard */; };
 		65D7C0721EB077C600104DED /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D7C0711EB077C600104DED /* Login.storyboard */; };
 		65D7C0741EB07C8500104DED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7C0731EB07C8500104DED /* LoginViewController.swift */; };
-		65D7C0761EB07ECC00104DED /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7C0751EB07ECC00104DED /* CenterViewController.swift */; };
+		65D7C0761EB07ECC00104DED /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D7C0751EB07ECC00104DED /* PostsViewController.swift */; };
 		65E94A9A1EB30FD30057BBC9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E94A991EB30FD30057BBC9 /* User.swift */; };
 		65E94A9C1EB310660057BBC9 /* Snapstayak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E94A9B1EB310660057BBC9 /* Snapstayak.swift */; };
 		65E94A9E1EB3145D0057BBC9 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E94A9D1EB3145D0057BBC9 /* Keychain.swift */; };
@@ -47,11 +47,11 @@
 		654ED2941EC581F300EB266F /* LoggingInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingInViewController.swift; sourceTree = "<group>"; };
 		654ED2961EC58BD400EB266F /* LoginCheckEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCheckEmailViewController.swift; sourceTree = "<group>"; };
 		654ED2981EC5900B00EB266F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		6575CD991EB06F8000FF8A9F /* Center.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Center.storyboard; sourceTree = "<group>"; };
-		6575CD9C1EB070B400FF8A9F /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
+		6575CD991EB06F8000FF8A9F /* Posts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Posts.storyboard; sourceTree = "<group>"; };
+		6575CD9C1EB070B400FF8A9F /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		65D7C0711EB077C600104DED /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		65D7C0731EB07C8500104DED /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		65D7C0751EB07ECC00104DED /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		65D7C0751EB07ECC00104DED /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		65E94A991EB30FD30057BBC9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65E94A9B1EB310660057BBC9 /* Snapstayak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapstayak.swift; sourceTree = "<group>"; };
 		65E94A9D1EB3145D0057BBC9 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 		6575CD9B1EB06FC500FF8A9F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				6575CD9C1EB070B400FF8A9F /* Top.storyboard */,
-				6575CD991EB06F8000FF8A9F /* Center.storyboard */,
+				6575CD9C1EB070B400FF8A9F /* Settings.storyboard */,
+				6575CD991EB06F8000FF8A9F /* Posts.storyboard */,
 				D51EA31B1EA843880046AB48 /* Main.storyboard */,
 				D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */,
 				65D7C0711EB077C600104DED /* Login.storyboard */,
@@ -132,7 +132,7 @@
 				654E003E1EB073B900F2C6EF /* SettingsTableViewController.swift */,
 				D553B9F31EAEFC1000D480FF /* CameraViewController.swift */,
 				D51A02361EB061BE00183336 /* DetailsViewController.swift */,
-				65D7C0751EB07ECC00104DED /* CenterViewController.swift */,
+				65D7C0751EB07ECC00104DED /* PostsViewController.swift */,
 			);
 			name = "Swipe View Controllers";
 			sourceTree = "<group>";
@@ -271,12 +271,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6575CD9A1EB06F8000FF8A9F /* Center.storyboard in Resources */,
+				6575CD9A1EB06F8000FF8A9F /* Posts.storyboard in Resources */,
 				65D7C0721EB077C600104DED /* Login.storyboard in Resources */,
 				D51EA3221EA843880046AB48 /* LaunchScreen.storyboard in Resources */,
 				D51EA31F1EA843880046AB48 /* Assets.xcassets in Resources */,
 				D51EA31D1EA843880046AB48 /* Main.storyboard in Resources */,
-				6575CD9D1EB070B400FF8A9F /* Top.storyboard in Resources */,
+				6575CD9D1EB070B400FF8A9F /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +347,7 @@
 				65E94A9A1EB30FD30057BBC9 /* User.swift in Sources */,
 				654ED2951EC581F300EB266F /* LoggingInViewController.swift in Sources */,
 				654ED2971EC58BD400EB266F /* LoginCheckEmailViewController.swift in Sources */,
-				65D7C0761EB07ECC00104DED /* CenterViewController.swift in Sources */,
+				65D7C0761EB07ECC00104DED /* PostsViewController.swift in Sources */,
 				D5F0D2D11EC3FCB900E4C891 /* Post.swift in Sources */,
 				D553B9F41EAEFC1000D480FF /* CameraViewController.swift in Sources */,
 				65E94A9C1EB310660057BBC9 /* Snapstayak.swift in Sources */,

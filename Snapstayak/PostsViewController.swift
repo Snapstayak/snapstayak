@@ -1,5 +1,5 @@
 //
-//  CenterViewController.swift
+//  PostsViewController.swift
 //  Snapstayak
 //
 //  Created by Tejen Hasmukh Patel on 4/26/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CenterViewController: UIViewController {
+class PostsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class CenterViewController: UIViewController {
 
 }
 
-extension CenterViewController: NewPostDelegate {
+extension PostsViewController: NewPostDelegate {
     func newPostWithCapturedMedia(_ capturedMedia: CapturedMedia) {
         print("New Post!")
     }

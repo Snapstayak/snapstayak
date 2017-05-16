@@ -66,19 +66,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func buildSwipeNavController() -> SwipeNavigationController {
         // There is a logged-in user, so go to the main screen.
-        let centerStoryboard = UIStoryboard(name: "Center", bundle: nil)
-        let centerViewController = centerStoryboard.instantiateInitialViewController() as! CenterViewController
-        let swipeNavigationController = SwipeNavigationController(centerViewController: centerViewController)
-        
-        swipeNavigationController.leftViewController = DetailsViewController()
-        
-        let topStoryboard = UIStoryboard(name: "Top", bundle: nil)
-        swipeNavigationController.topViewController = topStoryboard.instantiateInitialViewController()
-        
+        // CameraViewController
         let cameraViewController = CameraViewController()
-        cameraViewController.postDelegate = centerViewController
-        swipeNavigationController.rightViewController = cameraViewController
-        // swipeNavigationController.showEmbeddedView(position: .right) // this makes the right (camera) container open first by default (desired feature, commenting out temporarily to work on the Center container)
+        let swipeNavigationController = SwipeNavigationController(centerViewController: cameraViewController)
+        
+        // PostsViewController
+        let postsStoryBoard = UIStoryboard(name: "Posts", bundle: nil)
+        let postsViewController = postsStoryBoard.instantiateInitialViewController()
+        swipeNavigationController.leftViewController = postsViewController
+        
+        // SettingsViewController
+        let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        let settingsViewController = settingsStoryboard.instantiateInitialViewController()
+        swipeNavigationController.topViewController = settingsViewController
+        
         return swipeNavigationController
     }
     

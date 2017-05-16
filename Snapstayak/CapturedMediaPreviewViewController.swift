@@ -47,9 +47,8 @@ class CapturedMediaPreviewViewController: UIViewController {
     
     // TODO: - This is not working!
     func sendButtonTapped() {
-        self.delegate?.capturedMediaPreviewViewController(self, userDidPressSendWithCapturedMedia: self.media)
         self.dismiss(completion: nil)
-        self.containerSwipeNavigationController?.showEmbeddedView(position: .center)
+        self.delegate?.capturedMediaPreviewViewController(self, userDidPressSendWithCapturedMedia: self.media)
     }
     
     private func dismiss(completion: (()->())?) {
