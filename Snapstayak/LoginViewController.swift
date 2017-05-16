@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        UIApplication.shared.statusBarStyle = .lightContent
         loginIndicator.stopAnimating()
         loginButton.isHidden = false
     }

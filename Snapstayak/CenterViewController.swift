@@ -29,13 +29,8 @@ class CenterViewController: UIViewController {
 
 }
 
-extension CenterViewController: CapturedMediaPreviewPostDelegate {
-    
-    func newPhotoPostWithData(photo: UIImage) {
-        //do something like insert a new row to edit into the storyboard.
-    }
-    
-    func newVideoPostWithData(videoURL: URL) {
-        // do soemthing like insert a new row to edit into the storyboard.
+extension CenterViewController: NewPostDelegate {
+    func newPostWithCapturedMedia(_ capturedMedia: CapturedMedia) {
+        print("New Post!")
     }
 }

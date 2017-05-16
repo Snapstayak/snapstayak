@@ -9,25 +9,20 @@
 import UIKit
 import SwipeNavigationController
 
-protocol CapturedMediaPreviewViewControllerDelegate: class {
-    func capturedMediaPreviewViewControllerWillDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController)
-}
-
-protocol CapturedMediaPreviewPostDelegate: class {
-    func newPhotoPostWithData(photo: UIImage)
-    func newVideoPostWithData(videoURL: URL)
+protocol CapturedMediaPreviewDelegate: class {
+    func capturedMediaPreviewViewController(_ capturedMediaVC: CapturedMediaPreviewViewController, userDidPressSendWithCapturedMedia capturedMedia: CapturedMedia)
 }
 
 class CapturedMediaPreviewViewController: UIViewController {
-    weak var viewControllerDelegate: CapturedMediaPreviewViewControllerDelegate?
-    weak var postDelegate: CapturedMediaPreviewPostDelegate?
+    
+    weak var delegate: CapturedMediaPreviewDelegate?
     var mediaContainerView: UIView!
     var cancelButton: UIButton!
     var sendButton: SendButton!
+    var media: CapturedMedia!
     private var cancelButtonImageView: UIImageView!
     
     func dismissViewController() {
-        self.viewControllerDelegate?.capturedMediaPreviewViewControllerWillDismiss(self)
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -38,7 +33,7 @@ class CapturedMediaPreviewViewController: UIViewController {
         self.view.addSubview(self.cancelButtonImageView)
         let cancelButtonFrame = CGRect(x: 0, y: 0, width: cancelButtonImageViewFrame.maxX + cancelButtonImageViewFrame.width/1.5, height: cancelButtonImageViewFrame.maxY + cancelButtonImageViewFrame.height/1.5)
         self.cancelButton = UIButton(frame: cancelButtonFrame)
-        self.cancelButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+        self.cancelButton.addTarget(self, action: #selector(self.dismissViewController), for: .touchUpInside)
         self.view.addSubview(cancelButton)
     }
     
@@ -50,10 +45,15 @@ class CapturedMediaPreviewViewController: UIViewController {
         self.view.addSubview(self.sendButton)
     }
     
+    // TODO: - This is not working!
     func sendButtonTapped() {
-        self.dismiss(animated: false) {
-            self.containerSwipeNavigationController?.showEmbeddedView(position: .center)
-        }
+        self.delegate?.capturedMediaPreviewViewController(self, userDidPressSendWithCapturedMedia: self.media)
+        self.dismiss(completion: nil)
+        self.containerSwipeNavigationController?.showEmbeddedView(position: .center)
+    }
+    
+    private func dismiss(completion: (()->())?) {
+        self.dismiss(animated: false, completion: completion)
     }
     
     override func viewDidLoad() {

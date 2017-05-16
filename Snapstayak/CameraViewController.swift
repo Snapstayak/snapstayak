@@ -9,8 +9,13 @@
 import UIKit
 import SwiftyCam
 
+protocol NewPostDelegate: class {
+    func newPostWithCapturedMedia(_ capturedMedia: CapturedMedia)
+}
+
 class CameraViewController: SwiftyCamViewController {
     
+    weak var postDelegate: NewPostDelegate?
     fileprivate var flipCameraButton: UIButton!
     fileprivate var cameraFlashButton: UIButton!
     fileprivate var cameraButton: RecordButton!
@@ -78,14 +83,18 @@ class CameraViewController: SwiftyCamViewController {
 
 extension CameraViewController: SwiftyCamViewControllerDelegate {
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didTake photo: UIImage) {
-        let imagePreviewViewController = CapturedImagePreviewViewController(image: photo)
-        imagePreviewViewController.viewControllerDelegate = self
+        guard let imagePreviewViewController = CapturedImagePreviewViewController(image: photo) else {
+            fatalError("ImagePreviewViewController could not initialize")
+        }
+        imagePreviewViewController.delegate = self
         self.present(imagePreviewViewController, animated: false, completion: nil)
     }
     
     func swiftyCam(_ swiftyCam: SwiftyCamViewController, didFinishProcessVideoAt url: URL) {
-        let videoPreviewViewController = CapturedVideoPreviewViewController(videoURL: url)
-        videoPreviewViewController.viewControllerDelegate = self
+        guard let videoPreviewViewController = CapturedVideoPreviewViewController(videoURL: url) else {
+            fatalError("VideoPreviewViewController could not initialize!")
+        }
+        videoPreviewViewController.delegate = self
         self.present(videoPreviewViewController, animated: false, completion: nil)
     }
     
@@ -125,8 +134,9 @@ extension CameraViewController: SwiftyCamViewControllerDelegate {
     }
 }
 
-extension CameraViewController: CapturedMediaPreviewViewControllerDelegate {
-    func capturedMediaPreviewViewControllerWillDismiss(_ capturedMediaVC: CapturedMediaPreviewViewController) {
-        print("Will dismiss!")
+extension CameraViewController: CapturedMediaPreviewDelegate {
+    func capturedMediaPreviewViewController(_ capturedMediaVC: CapturedMediaPreviewViewController, userDidPressSendWithCapturedMedia capturedMedia: CapturedMedia) {
+        self.postDelegate?.newPostWithCapturedMedia(capturedMedia)
+        self.containerSwipeNavigationController?.showEmbeddedView(position: .center)
     }
 }

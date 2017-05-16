@@ -16,9 +16,14 @@ class CapturedVideoPreviewViewController: CapturedMediaPreviewViewController {
     var player: AVPlayer?
     var playerController : AVPlayerViewController?
     
-    init(videoURL: URL) {
-        self.videoURL = videoURL
+    init?(videoURL: URL) {
         super.init(nibName: nil, bundle: nil)
+        do {
+            self.media = try CapturedMedia(withVideoData: Data(contentsOf: videoURL))
+        } catch {
+            return nil
+        }
+        self.videoURL = videoURL
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -58,24 +63,11 @@ class CapturedVideoPreviewViewController: CapturedMediaPreviewViewController {
     
     
     // MARK: - Helper actions.
-    
-    func onDismissButtonTapped() {
-        print("Button tapped!")
-        self.dismissViewController()
-    }
 
     @objc private func playerItemDidReachEnd(_ notification: Notification) {
         if self.player != nil {
             self.player!.seek(to: kCMTimeZero)
             self.player!.play()
         }
-    }
-    
-    override func sendButtonTapped() {
-        guard let videoURL = self.videoURL else {
-            return
-        }
-        self.postDelegate?.newVideoPostWithData(videoURL: videoURL)
-        super.sendButtonTapped()
     }
 }

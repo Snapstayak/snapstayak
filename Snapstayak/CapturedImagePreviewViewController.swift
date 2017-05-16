@@ -11,9 +11,10 @@ import UIKit
 class CapturedImagePreviewViewController: CapturedMediaPreviewViewController {
     var image: UIImage?
     
-    init(image: UIImage?) {
-        self.image = image
+    init?(image: UIImage) {
         super.init(nibName: nil, bundle: nil)
+        self.image = image
+        self.media = CapturedMedia(withImage: image)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,21 +38,5 @@ class CapturedImagePreviewViewController: CapturedMediaPreviewViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    // MARK: - Helper actions.
-    
-    func onDismissButtonTapped() {
-        print("Button tapped!")
-        self.dismissViewController()
-    }
-    
-    override func sendButtonTapped() {
-        guard let sendImage = self.image else {
-            return
-        }
-        self.postDelegate?.newPhotoPostWithData(photo: sendImage)
-        super.sendButtonTapped()
     }
 }

@@ -9,8 +9,8 @@
 import UIKit
 
 enum MediumType {
-    case Video
-    case Image
+    case video
+    case image
 }
 
 class Medium: NSObject {
