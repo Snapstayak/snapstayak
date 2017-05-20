@@ -18,8 +18,8 @@ public enum Position {
 
 enum ActivePanDirection {
     case undefined
-    case horizontal
-    case vertical
+    case horizontal // Only on left, right, and middle.
+    case vertical   // Only on right (top and bottom).
 }
 
 // MARK: - SwipeNavigationControllerDelegate
@@ -175,7 +175,7 @@ open class SwipeNavigationController: UIViewController {
         let frameHeight = view.frame.size.height
         // bookmark the offsets to specific positions
         centerContainerOffset = CGVector(dx: currentXOffset.constant, dy: currentYOffset.constant)
-        topContainerOffset = CGVector(dx: centerContainerOffset.dx, dy: centerContainerOffset.dy + frameHeight)
+        topContainerOffset = CGVector(dx: centerContainerOffset.dx - frameWidth, dy: centerContainerOffset.dy + frameHeight)
         bottomContainerOffset = CGVector(dx: centerContainerOffset.dx, dy: centerContainerOffset.dy - frameHeight)
         leftContainerOffset = CGVector(dx: centerContainerOffset.dx + frameWidth, dy: centerContainerOffset.dy)
         rightContainerOffset = CGVector(dx: centerContainerOffset.dx - frameWidth, dy: centerContainerOffset.dy)
@@ -291,11 +291,23 @@ open class SwipeNavigationController: UIViewController {
             
             if isContainerActive(position: .top) || isContainerActive(position: .bottom) {
                 activePanDirection = .vertical
+            }
+            else if isContainerActive(position: .left) || isContainerActive(position: .center) {
+                activePanDirection = .horizontal
+            }
+            else {
+                activePanDirection = .undefined
+            }
+            /*
+             THIS IS THE ORIGINAL! USING FOR REFERENCE
+            if isContainerActive(position: .top) || isContainerActive(position: .bottom) {
+                activePanDirection = .vertical
             } else if isContainerActive(position: .left) || isContainerActive(position: .right) {
                 activePanDirection = .horizontal
             } else {
                 activePanDirection = .undefined
             }
+             */
             
         case .changed:
             /* Determine active direction if undefined
@@ -456,7 +468,7 @@ open class SwipeNavigationController: UIViewController {
                             
                             // pulled up
                         else {
-                            showEmbeddedView(position: .center)
+                            showEmbeddedView(position: .right)
                         }
                     }
                 }
@@ -532,13 +544,15 @@ open class SwipeNavigationController: UIViewController {
     // MARK: - Layout Constraints
     // Create a layout constraint that make view item to align center x to the respective item with offset according to the position
     // For view item that is positioned on the left will offset by -toItem.width, and +toItem.width if it's positioned on the right
+    // TODO: - fix this for adding a top view controller
     func alignCenterXConstraint(forItem item: UIView, toItem: UIView, position: Position) -> NSLayoutConstraint {
-        let offset = position == .left ? -self.view.frame.width : position == .right ? toItem.frame.width : 0
+        let offset = position == .left ? -self.view.frame.width : position == .right || position == .top ? toItem.frame.width : 0
         return NSLayoutConstraint(item: item, attribute: .centerX, relatedBy: .equal, toItem: toItem, attribute: .centerX, multiplier: 1, constant: offset)
     }
     
     // Create a layout constraint that make view item to align center y to the respective item height offset according to the position
     // For view item that is positioned on the top will offset by -toItem.height, and +toItem.height if it's positioned on the right
+    // TODO: - fix this for adding a top view controller
     func alignCenterYConstraint(forItem item: UIView, toItem: UIView, position: Position) -> NSLayoutConstraint {
         let offset = position == .top ? -self.view.frame.height : position == .bottom ? toItem.frame.height : 0
         return NSLayoutConstraint(item: item, attribute: .centerY, relatedBy: .equal, toItem: toItem, attribute: .centerY, multiplier: 1, constant: offset)

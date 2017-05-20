@@ -66,14 +66,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func buildSwipeNavController() -> SwipeNavigationController {
         // There is a logged-in user, so go to the main screen.
-        // CameraViewController
-        let cameraViewController = CameraViewController()
-        let swipeNavigationController = SwipeNavigationController(centerViewController: cameraViewController)
         
         // PostsViewController
         let postsStoryBoard = UIStoryboard(name: "Posts", bundle: nil)
         let postsViewController = postsStoryBoard.instantiateInitialViewController()
-        swipeNavigationController.leftViewController = postsViewController
+        let swipeNavigationController = SwipeNavigationController(centerViewController: postsViewController!)
+        
+        // CameraViewController
+        let cameraViewController = CameraViewController()
+        swipeNavigationController.rightViewController = cameraViewController
         
         // SettingsViewController
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)

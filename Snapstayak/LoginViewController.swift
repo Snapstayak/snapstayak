@@ -55,9 +55,16 @@ class LoginViewController: UIViewController {
                 }, completion: nil)
             })
         } else {
-            UIView.animate(withDuration: 1, animations: {
-                self.view.alpha = 1
-            }, completion: nil)
+            // TODO: - REVERT THIS.
+//            UIView.animate(withDuration: 1, animations: {
+//                self.view.alpha = 1
+//            }, completion: nil)
+            let vc = (UIApplication.shared.delegate as! AppDelegate).buildSwipeNavController()
+            self.present(vc, animated: true, completion: {
+                UIView.animate(withDuration: 1, animations: {
+                    self.view.alpha = 1
+                }, completion: nil)
+            })
         }
     }
     
