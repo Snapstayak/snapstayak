@@ -10,8 +10,10 @@ import UIKit
 import CoreLocation
 
 class Post: NSObject {
-    var id: String!
+    var id: String?
     var author: User?
     var media: [Medium]?
     var location: CLLocation!
+    
+    
 }

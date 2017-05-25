@@ -69,17 +69,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // PostsViewController
         let postsStoryBoard = UIStoryboard(name: "Posts", bundle: nil)
-        let postsViewController = postsStoryBoard.instantiateInitialViewController()
-        let swipeNavigationController = SwipeNavigationController(centerViewController: postsViewController!)
+        let postsViewController = postsStoryBoard.instantiateInitialViewController() as! PostsViewController
+        let swipeNavigationController = SwipeNavigationController(centerViewController: postsViewController)
         
         // CameraViewController
         let cameraViewController = CameraViewController()
         swipeNavigationController.rightViewController = cameraViewController
+        cameraViewController.postDelegate = postsViewController
         
         // SettingsViewController
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
         let settingsViewController = settingsStoryboard.instantiateInitialViewController()
         swipeNavigationController.topViewController = settingsViewController
+        
+        // DetailsViewController
+        let detailsViewController = DetailsViewController()
+        swipeNavigationController.leftViewController = detailsViewController
         
         return swipeNavigationController
     }
@@ -104,9 +109,11 @@ func alert(title: String, message: String, button: String) {
         while let presentedViewController = topController.presentedViewController {
             topController = presentedViewController
         }
-        // TODO: - the following should only happen on the Main thread!
-        delay(0.1, closure: {
-            topController.present(alertController, animated: true, completion: nil);
-        });
+        
+        DispatchQueue.main.async {
+            delay(0.1, closure: {
+                topController.present(alertController, animated: true, completion: nil);
+            });
+        }
     }
 }

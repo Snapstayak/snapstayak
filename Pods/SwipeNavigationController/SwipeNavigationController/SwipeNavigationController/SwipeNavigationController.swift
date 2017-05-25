@@ -544,7 +544,6 @@ open class SwipeNavigationController: UIViewController {
     // MARK: - Layout Constraints
     // Create a layout constraint that make view item to align center x to the respective item with offset according to the position
     // For view item that is positioned on the left will offset by -toItem.width, and +toItem.width if it's positioned on the right
-    // TODO: - fix this for adding a top view controller
     func alignCenterXConstraint(forItem item: UIView, toItem: UIView, position: Position) -> NSLayoutConstraint {
         let offset = position == .left ? -self.view.frame.width : position == .right || position == .top ? toItem.frame.width : 0
         return NSLayoutConstraint(item: item, attribute: .centerX, relatedBy: .equal, toItem: toItem, attribute: .centerX, multiplier: 1, constant: offset)
@@ -552,7 +551,6 @@ open class SwipeNavigationController: UIViewController {
     
     // Create a layout constraint that make view item to align center y to the respective item height offset according to the position
     // For view item that is positioned on the top will offset by -toItem.height, and +toItem.height if it's positioned on the right
-    // TODO: - fix this for adding a top view controller
     func alignCenterYConstraint(forItem item: UIView, toItem: UIView, position: Position) -> NSLayoutConstraint {
         let offset = position == .top ? -self.view.frame.height : position == .bottom ? toItem.frame.height : 0
         return NSLayoutConstraint(item: item, attribute: .centerY, relatedBy: .equal, toItem: toItem, attribute: .centerY, multiplier: 1, constant: offset)

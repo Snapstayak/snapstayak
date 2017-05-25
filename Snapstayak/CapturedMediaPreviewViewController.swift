@@ -45,7 +45,7 @@ class CapturedMediaPreviewViewController: UIViewController {
         self.view.addSubview(self.sendButton)
     }
     
-    // TODO: - This is not working!
+    
     func sendButtonTapped() {
         self.dismiss(completion: nil)
         self.delegate?.capturedMediaPreviewViewController(self, userDidPressSendWithCapturedMedia: self.media)

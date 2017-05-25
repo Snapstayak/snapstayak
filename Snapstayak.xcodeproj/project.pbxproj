@@ -31,6 +31,7 @@
 		D51EA3221EA843880046AB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51EA3201EA843880046AB48 /* LaunchScreen.storyboard */; };
 		D553B9F41EAEFC1000D480FF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553B9F31EAEFC1000D480FF /* CameraViewController.swift */; };
 		D553B9F61EAF050900D480FF /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D553B9F51EAF050900D480FF /* RecordButton.swift */; };
+		D5A432EC1ED3E142003EF9B7 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A432EB1ED3E142003EF9B7 /* PostTableViewCell.swift */; };
 		D5F0D2D11EC3FCB900E4C891 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F0D2D01EC3FCB900E4C891 /* Post.swift */; };
 		D5F0D2D31EC3FD7100E4C891 /* Medium.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F0D2D21EC3FD7100E4C891 /* Medium.swift */; };
 		D5F2D71C1EC92F5C009BAC36 /* CapturedMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F2D71B1EC92F5C009BAC36 /* CapturedMedia.swift */; };
@@ -65,6 +66,7 @@
 		D51EA3231EA843880046AB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D553B9F31EAEFC1000D480FF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D553B9F51EAF050900D480FF /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		D5A432EB1ED3E142003EF9B7 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		D5F0D2D01EC3FCB900E4C891 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D5F0D2D21EC3FD7100E4C891 /* Medium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		D5F2D71B1EC92F5C009BAC36 /* CapturedMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedMedia.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				D553B9F51EAF050900D480FF /* RecordButton.swift */,
 				D51A93681EB71219002DEA99 /* SendButton.swift */,
+				D5A432EB1ED3E142003EF9B7 /* PostTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				654ED2971EC58BD400EB266F /* LoginCheckEmailViewController.swift in Sources */,
 				65D7C0761EB07ECC00104DED /* PostsViewController.swift in Sources */,
 				D5F0D2D11EC3FCB900E4C891 /* Post.swift in Sources */,
+				D5A432EC1ED3E142003EF9B7 /* PostTableViewCell.swift in Sources */,
 				D553B9F41EAEFC1000D480FF /* CameraViewController.swift in Sources */,
 				65E94A9C1EB310660057BBC9 /* Snapstayak.swift in Sources */,
 				654ED2991EC5900B00EB266F /* Common.swift in Sources */,
