@@ -6,7 +6,6 @@
 //  Copyright © 2017 Snapstayak. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class User: Snapstayak {
