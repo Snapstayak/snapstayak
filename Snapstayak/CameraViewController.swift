@@ -19,7 +19,6 @@ class CameraViewController: SwiftyCamViewController {
     fileprivate var flipCameraButton: UIButton!
     fileprivate var cameraFlashButton: UIButton!
     fileprivate var cameraButton: RecordButton!
-    
     let buttonWidthHeight: CGFloat = 90
     
     override func viewDidLoad() {

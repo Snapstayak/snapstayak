@@ -8,7 +8,9 @@
 
 import UIKit
 
-// TODO: - talk to the 
+// TODO: - Enable Swiping to the details view controller
+// TODO: - Fix the backspacing on hashtags for the textview.
+// TODO: - Don't allow spaces after a hashtag.
 
 class PostTableViewCell: UITableViewCell {
     var onTextViewTextUpdate: (()->Swift.Void)?
