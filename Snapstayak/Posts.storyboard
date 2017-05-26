@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ENg-N4-s7i">
-                                <rect key="frame" x="0.0" y="-1" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="-0.5" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="70" id="k3K-GC-HRZ" customClass="PostTableViewCell" customModule="Snapstayak" customModuleProvider="target">
@@ -68,6 +68,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="9vc-ok-81f" secondAttribute="bottom" constant="16" id="Xxh-fy-SJF"/>
                                                         <constraint firstAttribute="trailing" secondItem="9vc-ok-81f" secondAttribute="trailing" constant="8" id="drL-0Q-3Ok"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iwO-CI-YRo" secondAttribute="trailing" constant="8" id="r2c-o3-uWr"/>
+                                                        <constraint firstItem="vih-Ta-jUr" firstAttribute="top" secondItem="VdZ-Bc-pfn" secondAttribute="top" constant="15" id="t66-uH-Ygw"/>
                                                         <constraint firstItem="9vc-ok-81f" firstAttribute="leading" secondItem="vih-Ta-jUr" secondAttribute="trailing" constant="8" id="zHa-q6-WCP"/>
                                                     </constraints>
                                                 </view>
@@ -76,7 +77,6 @@
                                                 <constraint firstItem="VdZ-Bc-pfn" firstAttribute="width" secondItem="iAZ-57-pMV" secondAttribute="width" id="2MB-EH-kNd"/>
                                                 <constraint firstItem="VdZ-Bc-pfn" firstAttribute="centerY" secondItem="iAZ-57-pMV" secondAttribute="centerYWithinMargins" id="CCF-zA-CgU"/>
                                                 <constraint firstItem="VdZ-Bc-pfn" firstAttribute="centerX" secondItem="iAZ-57-pMV" secondAttribute="centerXWithinMargins" id="Osu-Fe-tFX"/>
-                                                <constraint firstItem="vih-Ta-jUr" firstAttribute="centerY" secondItem="iAZ-57-pMV" secondAttribute="centerY" id="PFD-Ih-adh"/>
                                                 <constraint firstItem="VdZ-Bc-pfn" firstAttribute="height" secondItem="iAZ-57-pMV" secondAttribute="height" id="cEQ-zM-As6"/>
                                             </constraints>
                                         </tableViewCellContentView>

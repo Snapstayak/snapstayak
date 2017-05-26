@@ -14,6 +14,4 @@ class Post: NSObject {
     var author: User?
     var media: [Medium]?
     var location: CLLocation!
-    
-    
 }

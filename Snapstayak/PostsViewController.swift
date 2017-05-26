@@ -37,6 +37,13 @@ class PostsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: 
+    
+    @objc fileprivate func swipeOnTableViewCell(_ sender: UIPanGestureRecognizer) {
+        
+    }
 }
 
 extension PostsViewController: UITableViewDataSource {
@@ -49,7 +56,6 @@ extension PostsViewController: UITableViewDataSource {
         
         cell.postData = self.posts?[indexPath.row] ?? nil
         cell.onTextViewTextUpdate = {
-            
             // Might need the following commented-out code. For now, it's working fine though.
             
             /*
@@ -66,7 +72,7 @@ extension PostsViewController: UITableViewDataSource {
             self.postsTableView.setContentOffset(currentOffset, animated: false)
             */
         }
-        
+        cell.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.swipeOnTableViewCell(_:))))
         return cell
     }
 }

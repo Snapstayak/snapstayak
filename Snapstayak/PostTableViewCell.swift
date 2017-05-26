@@ -8,13 +8,15 @@
 
 import UIKit
 
+// TODO: - talk to the 
+
 class PostTableViewCell: UITableViewCell {
-    
-    fileprivate static var NewPostTextViewPlaceHolderText: String = "#Something..."
+    var onTextViewTextUpdate: (()->Swift.Void)?
     @IBOutlet weak var postTitleTextView: UITextView!
     @IBOutlet weak var postInfoContainerView: UIView!
     @IBOutlet weak var postTitleLabel: UILabel!
-    var onTextViewTextUpdate: (()->Swift.Void)?
+    fileprivate var userCanBackspaceHashTag: Bool = false
+    fileprivate static var NewPostTextViewPlaceHolderText: String = "#Something..."
     
     var postData: Post? {
         didSet {
@@ -47,13 +49,33 @@ extension PostTableViewCell: UITextViewDelegate {
         textView.text = "#"
     }
     
+    // This is called after a textView.text inserts the new text.
     func textViewDidChange(_ textView: UITextView) {
         self.onTextViewTextUpdate?()
-        let normalizedText = textView.text.replacingOccurrences(of: "#", with: "")
-        let textViewWords = normalizedText.components(separatedBy: " ")   // Separate the textView.text into separate words
-        var replacementString = String()
-        for word in textViewWords {
-            replacementString.append("#\(word)")
+        var replacementString = textView.text
+        // The following is for if the user completely removes all text.
+        if textView.text == "" {
+            textView.text = "#"
+            return
+        }
+        
+        // TODO: Fix the user backspacing a hashtag.
+        // Replacement string needs to have a '#' before each new word.
+        if replacementString?.characters.last == " " {
+            if self.userCanBackspaceHashTag {
+                // This means the user backspaced the hashtag.
+                replacementString?.characters.removeLast()
+                replacementString?.characters.removeLast()
+                self.userCanBackspaceHashTag = false
+            } else {
+                replacementString?.append(" #")
+            }
+        }
+        
+        if textView.text.characters.last == "#" {
+            self.userCanBackspaceHashTag = true
+        } else {
+            self.userCanBackspaceHashTag = false
         }
         textView.text = replacementString
     }
@@ -65,4 +87,3 @@ extension PostTableViewCell: UITextViewDelegate {
         }
     }
 }
-
